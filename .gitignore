@@ -74,3 +74,6 @@ crashlytics-build.properties
 #ginore
 VRTime/ProjectSettings/
 VRTime/.vsconfig/
+VRTime/Assets/XR/
+VRTime/Assets/XRI/
+
