@@ -7,20 +7,22 @@ public class ButtonDown : MonoBehaviour
     bool pressed = false;
 
     public RandomCubeColor randomCubeColor;
+    public SingleCharPrinter singleCharPrinter;
 
     private void Start()
     {
         randomCubeColor = FindObjectOfType<RandomCubeColor>();
+        singleCharPrinter = FindObjectOfType<SingleCharPrinter>();
     }
 
     public void OnClickButtonDown()
     {
-        Debug.Log("Down");
-        Debug.Log(randomCubeColor);
         if (randomCubeColor != null)
-        {
-            Debug.Log("check");
             randomCubeColor.RandomColor();
-        }
+        
+        
+        if (singleCharPrinter != null)
+            singleCharPrinter.Printer();
+
     }
 }
