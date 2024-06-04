@@ -15,9 +15,5 @@ public class RandomCubeColor : MonoBehaviour
         {
             cubeRenderer.material.color = randomColor;
         }
-        else
-        {
-            Debug.LogWarning("Cube Object is not Renderer Component");
-        }
     }
 }
