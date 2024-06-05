@@ -10,10 +10,13 @@ public class ActivateRay : MonoBehaviour
     public GameObject LeftTP;
     public InputActionProperty RightActivate;
     public InputActionProperty LeftActivate;
+    public InputActionProperty RightHandIsGrab;
+    public InputActionProperty LeftHandIsGrab;
+
     // Update is called once per 
     void Update()
     {
-        RightTP.SetActive(RightActivate.action.ReadValue<float>() > 0.1f);
-        LeftTP.SetActive(LeftActivate.action.ReadValue<float>() > 0.1f);
+        RightTP.SetActive(RightHandIsGrab.action.ReadValue<float>() == 0 && RightActivate.action.ReadValue<float>() > 0.1f);
+        LeftTP.SetActive(LeftHandIsGrab.action.ReadValue<float>() == 0 && LeftActivate.action.ReadValue<float>() > 0.1f);
     }
 }
