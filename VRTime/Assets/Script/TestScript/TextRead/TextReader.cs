@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TextReader : MonoBehaviour
 {
+
     protected string text;
     //변경할 내용
     public TMP_Text targetText;
