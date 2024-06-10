@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class SingleCharPrinter : TextReader
 {
+    [SerializeField]
     private float delay = 0.125f;
 
     public void Printer()

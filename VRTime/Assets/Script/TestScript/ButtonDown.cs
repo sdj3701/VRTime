@@ -20,7 +20,6 @@ public class ButtonDown : MonoBehaviour
         if (randomCubeColor != null)
             randomCubeColor.RandomColor();
         
-        
         if (singleCharPrinter != null)
             singleCharPrinter.Printer();
 
