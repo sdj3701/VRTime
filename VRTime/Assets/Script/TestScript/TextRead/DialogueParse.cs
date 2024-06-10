@@ -6,7 +6,7 @@ public class DialogueParse : MonoBehaviour
 {
     private ITextData textData;
 
-    private void Start()
+    private void Awake()
     {
         textData = new TextData();
         Parse("dialogue_test_1");

@@ -7,10 +7,10 @@ public class TextData : ITextData
     private static List<string[]> dialogueDataList = new List<string[]>();
     private static int CharacterCount;
 
-    public string GetDialogueData(int frist, int second)
+    public string GetDialogueData(int first, int second)
     {
         string[][] DialogueData = dialogueDataList.ToArray();
-        return DialogueData[frist][second];
+        return DialogueData[first][second];
     }
     public void SetDialogueData(string[] Text)
     {
