@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ButtonDown : MonoBehaviour
 {
-    bool pressed = false;
+    //private bool pressed = false;
 
-    public RandomCubeColor randomCubeColor;
-    public SingleCharPrinter singleCharPrinter;
+    private RandomCubeColor randomCubeColor;
+    private SingleCharPrinter singleCharPrinter;
+    private Transform parentTransform;
 
     private void Start()
     {
         randomCubeColor = FindObjectOfType<RandomCubeColor>();
         singleCharPrinter = FindObjectOfType<SingleCharPrinter>();
+        parentTransform = transform.parent;
     }
 
     public void OnClickButtonDown()
@@ -21,7 +23,7 @@ public class ButtonDown : MonoBehaviour
             randomCubeColor.RandomColor();
         
         if (singleCharPrinter != null)
-            singleCharPrinter.Printer();
+            singleCharPrinter.Printer(parentTransform);
 
     }
 }
