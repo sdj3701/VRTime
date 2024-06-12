@@ -5,11 +5,13 @@ using UnityEngine;
 public class DialogueParse : MonoBehaviour
 {
     private ITextData textData;
+    [SerializeField] 
+    private TextAsset csvFile = null;
     
     private void Awake()
     {
         textData = new TextData();
-        Parse("dialogue_test_1");
+        Parse(csvFile.name);
     }
 
     private Dialogue[] Parse(string _CSVFileName)
@@ -25,7 +27,7 @@ public class DialogueParse : MonoBehaviour
 
             // 인터페이스 활용하여 의존성 약화
             textData.SetDialogueData(row);
-            //Debug.Log(row[2]);
+            //Debug.Log(row[1] +row[2]);
 
             if (++i < data.Length)
             {
