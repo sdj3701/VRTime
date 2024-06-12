@@ -1461,7 +1461,6 @@ GameObject:
   - component: {fileID: 647513791}
   - component: {fileID: 647513793}
   - component: {fileID: 647513792}
-  - component: {fileID: 647513794}
   - component: {fileID: 647513795}
   - component: {fileID: 647513796}
   m_Layer: 5
@@ -1530,19 +1529,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647513790}
   m_CullTransparentMesh: 1
---- !u!114 &647513794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647513790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 168c1862dee2623469238450f5126b26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: TestText
 --- !u!114 &647513795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2782,7 +2768,6 @@ GameObject:
   - component: {fileID: 1860574359}
   - component: {fileID: 1860574361}
   - component: {fileID: 1860574360}
-  - component: {fileID: 1860574362}
   - component: {fileID: 1860574363}
   - component: {fileID: 1860574364}
   m_Layer: 5
@@ -2852,19 +2837,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860574358}
   m_CullTransparentMesh: 1
---- !u!114 &1860574362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860574358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 168c1862dee2623469238450f5126b26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: dialogue_test_1
 --- !u!114 &1860574363
 MonoBehaviour:
   m_ObjectHideFlags: 0
