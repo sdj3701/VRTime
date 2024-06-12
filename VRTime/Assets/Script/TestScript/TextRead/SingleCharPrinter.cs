@@ -5,53 +5,20 @@ using TMPro;
 using UnityEngine;
 
 
-public class SingleCharPrinter : MonoBehaviour
+public class SingleCharPrinter : TextReader
 {
-    protected ITextData textData;
-    protected string text;
-    //변경할 내용
-    public TMP_Text targetText;
+    //[SerializeField]
+    public float delay;
 
-    [SerializeField]
-    private float delay = 0.125f;
-
-    private void Start()
+    public void Printer()
     {
-        textData = new TextData();
-        text = textData.GetDialogueData(0, 2);
-        Debug.Log(targetText);
-        targetText.text = " ";
+        StartCoroutine(textPrint(delay));
     }
 
-    private TMP_Text FindTMPTextInChild(GameObject parentObject)
-    {
-        TMP_Text tmpText = null;
-
-        // 부모 오브젝트의 모든 자식을 순회하면서 TMP_Text를 찾음
-        foreach (Transform childTransform in parentObject.transform)
-        {
-            TMP_Text tmpTextComponent = childTransform.GetComponent<TMP_Text>();
-            if (tmpTextComponent != null)
-            {
-                tmpText = tmpTextComponent;
-                break; // TMP_Text를 발견했으면 루프 종료
-            }
-        }
-
-        return tmpText;
-    }
-
-    public void Printer(Transform parent)
-    {
-        StartCoroutine(textPrint(delay, parent));
-    }
-
-    IEnumerator textPrint(float delay, Transform parent)
+    IEnumerator textPrint(float delay)
     {
         StringBuilder builder = new StringBuilder(); // StringBuilder 객체 생성
         int count = 0;
-        targetText = FindTMPTextInChild(parent.gameObject);
-        Debug.Log( delay.ToString() + " " + targetText);
         while (count != text.Length)
         {
             if (count < text.Length)
