@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8451308780649914120}
   - component: {fileID: 3001054316998743710}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Next Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8451308780649914120}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2591767050369915199
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1966281788485579774
 RectTransform:
   m_ObjectHideFlags: 0
@@ -361,8 +373,8 @@ RectTransform:
   m_Children:
   - {fileID: 8347155849481215170}
   - {fileID: 869860100032982615}
-  - {fileID: 1825350920330316749}
   - {fileID: 5334265742480103603}
+  - {fileID: 1825350920330316749}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -383,7 +395,7 @@ GameObject:
   - component: {fileID: 4668266081490801070}
   - component: {fileID: 3400440248994996207}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: Before Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -675,7 +687,7 @@ PrefabInstance:
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
@@ -685,7 +697,7 @@ PrefabInstance:
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
@@ -735,12 +747,12 @@ PrefabInstance:
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 407.445
       objectReference: {fileID: 0}
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -110.5431
       objectReference: {fileID: 0}
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
@@ -819,7 +831,7 @@ PrefabInstance:
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
@@ -829,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
@@ -879,12 +891,12 @@ PrefabInstance:
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 407.445
       objectReference: {fileID: 0}
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4252604496639686180, guid: ab3067e10778c674082e2529ba946e04,
         type: 3}
