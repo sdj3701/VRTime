@@ -725,7 +725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Setting
+  m_text: hint
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0184bb84693ff7d45a498b59e3b799d0, type: 2}
   m_sharedMaterial: {fileID: 9124156277253124259, guid: 0184bb84693ff7d45a498b59e3b799d0,
@@ -1462,7 +1462,6 @@ GameObject:
   - component: {fileID: 647513793}
   - component: {fileID: 647513792}
   - component: {fileID: 647513795}
-  - component: {fileID: 647513796}
   m_Layer: 5
   m_Name: TestPanel
   m_TagString: Untagged
@@ -1543,19 +1542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetText: {fileID: 1101472110}
   delay: 0
---- !u!114 &647513796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647513790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab29bca475e628439c5549b5a005380, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  csvFile: {fileID: 4900000, guid: dd0d94cd696a38e47926994c787e94de, type: 3}
+  ReadTextName: TestText
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,6 +1723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 861336513}
+  - component: {fileID: 861336514}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1758,6 +1746,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &861336514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861336511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab29bca475e628439c5549b5a005380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csvFile:
+  - {fileID: 4900000, guid: c2f464c16fd50614d996a2062b287400, type: 3}
+  - {fileID: 4900000, guid: dd0d94cd696a38e47926994c787e94de, type: 3}
 --- !u!1 &871922737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,7 +2772,6 @@ GameObject:
   - component: {fileID: 1860574361}
   - component: {fileID: 1860574360}
   - component: {fileID: 1860574363}
-  - component: {fileID: 1860574364}
   m_Layer: 5
   m_Name: SettingPanel
   m_TagString: Untagged
@@ -2851,19 +2853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetText: {fileID: 632169929}
   delay: 0.125
---- !u!114 &1860574364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860574358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab29bca475e628439c5549b5a005380, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  csvFile: {fileID: 4900000, guid: c2f464c16fd50614d996a2062b287400, type: 3}
+  ReadTextName: dialogue_test_1
 --- !u!1 &2061761947
 GameObject:
   m_ObjectHideFlags: 0
