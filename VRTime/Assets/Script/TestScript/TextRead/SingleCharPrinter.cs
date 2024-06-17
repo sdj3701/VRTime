@@ -22,17 +22,17 @@ public class SingleCharPrinter : TextReader
         if (text == ReadTextName)
         {
             //Setting
-            text = textData.GetDialogueData(2, 2);
+            text = readTextData.textData[i].GetDialogueData(2, 2);
         }
         else
         {
             while(text != ReadTextName)
             {
                 Debug.Log(text);
-                text = textData.GetDialogueData(i, 0);
+                text = readTextData.textData[i].GetDialogueData(i, 0);
                 i++;
             }
-            text = textData.GetDialogueData(i, 1);
+            text = readTextData.textData[i].GetDialogueData(i, 1);
         }
 
         StringBuilder builder = new StringBuilder(); // StringBuilder °´Ã¼ »ý¼º
@@ -48,5 +48,7 @@ public class SingleCharPrinter : TextReader
             }
             yield return new WaitForSeconds(delay);
         }
+        
+        // TODO : int i°¡ max 
     }
 }

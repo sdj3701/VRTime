@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TextReader : MonoBehaviour
 {
-    protected ITextData textData;
+    protected IReadTextData readTextData { get; set; }
     protected string text;
     //변경할 내용
     public TMP_Text targetText;
@@ -14,8 +14,7 @@ public class TextReader : MonoBehaviour
 
     private void Start()
     {
-        textData = new TextData();
-        text = textData.GetDialogueData(0, 0);
+        text = readTextData.textData[0].GetDialogueData(0, 0);
         targetText.text = " ";
     }
 }
