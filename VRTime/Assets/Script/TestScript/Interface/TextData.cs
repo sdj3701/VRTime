@@ -5,7 +5,7 @@ using UnityEngine;
 public class TextData : ITextData
 {
     private static List<string[]> dialogueDataList = new List<string[]>();
-    private static int CharacterCount;
+    private static int characterCount;
 
     public string GetDialogueData(int first, int second)
     {
@@ -19,10 +19,15 @@ public class TextData : ITextData
 
     public int GetTextCount()
     {
-        return CharacterCount;
+        return characterCount;
     }
     public void SetTextCount(int textCount)
     {
-        CharacterCount = textCount;
+        characterCount = textCount;
+    }
+
+    public void Clear()
+    {
+        dialogueDataList.Clear();   
     }
 }

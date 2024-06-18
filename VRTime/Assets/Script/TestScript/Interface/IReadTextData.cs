@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IReadTextData 
 {
-    ITextData[] textData { get; set; }
+    public int GetFileCount();
+    public void SetFileCount(int fileNumCount);
 }

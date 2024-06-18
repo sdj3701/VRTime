@@ -19,20 +19,20 @@ public class SingleCharPrinter : TextReader
 
     IEnumerator textPrint(float delay)
     {
+        // 수정이 필요함
         if (text == ReadTextName)
         {
             //Setting
-            text = readTextData.textData[i].GetDialogueData(2, 2);
+            text = textData[0].GetDialogueData(2, 2);
         }
         else
         {
             while(text != ReadTextName)
             {
-                Debug.Log(text);
-                text = readTextData.textData[i].GetDialogueData(i, 0);
+                text = textData[0].GetDialogueData(i, 0);
                 i++;
             }
-            text = readTextData.textData[i].GetDialogueData(i, 1);
+            text = textData[0].GetDialogueData(i, 1);
         }
 
         StringBuilder builder = new StringBuilder(); // StringBuilder 객체 생성

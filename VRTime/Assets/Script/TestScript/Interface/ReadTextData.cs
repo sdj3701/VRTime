@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class ReadTextData : IReadTextData
 {
-    public ITextData[] textData { get; set; }
+    private static int fileCount;
 
-   
+    public int GetFileCount()
+    {
+        return fileCount;
+    }
+    public void SetFileCount(int fileNumCount)
+    {
+        fileCount = fileNumCount;
+    }
+
 }
