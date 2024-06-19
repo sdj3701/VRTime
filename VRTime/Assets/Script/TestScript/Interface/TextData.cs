@@ -6,15 +6,16 @@ public class TextData : ITextData
 {
     private static List<string[]> dialogueDataList = new List<string[]>();
     private static int characterCount;
+    private static string[][] DialogueData;
 
     public string GetDialogueData(int first, int second)
     {
-        string[][] DialogueData = dialogueDataList.ToArray();
         return DialogueData[first][second];
     }
     public void SetDialogueData(string[] Text)
     {
         dialogueDataList.Add(Text);
+        DialogueData = dialogueDataList.ToArray();
     }
 
     public int GetTextCount()

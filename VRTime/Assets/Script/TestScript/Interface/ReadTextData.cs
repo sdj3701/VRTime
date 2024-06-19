@@ -5,6 +5,7 @@ using UnityEngine;
 public class ReadTextData : IReadTextData
 {
     private static int fileCount;
+    private static int[] fileCol;
 
     public int GetFileCount()
     {
@@ -15,4 +16,16 @@ public class ReadTextData : IReadTextData
         fileCount = fileNumCount;
     }
 
+    public int GetFileColCount(int FileLeght)
+    {
+        return fileCol[FileLeght];
+    }
+    public void SetFileColCount(int FileLeght, int fileColCount)
+    {
+        fileCol[FileLeght] = fileColCount;
+    }
+    public void NewMemory(int FileSize)
+    {
+        fileCol = new int[FileSize + 1];
+    }
 }
