@@ -76,4 +76,7 @@ VRTime/ProjectSettings/
 VRTime/.vsconfig/
 VRTime/Assets/XR/
 VRTime/Assets/XRI/
-
+VRTime/Assets/Editor Default Resources/
+VRTime/Assets/ExternalDependencyManager/
+VRTime/Assets/Firebase/
+VRTime/Assets/Plugins/
