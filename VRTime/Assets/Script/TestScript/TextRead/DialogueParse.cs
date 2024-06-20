@@ -46,7 +46,7 @@ public class DialogueParse : MonoBehaviour
         string[] splitdata = _CSVFileName.Split(new char[] { '\n' });
         
         textData[textNum][0].SetDialogueData(splitdata);
-
+        //Debug.Log(textData[textNum][0].GetDialogueData(0,0));
         for (int i = 1; i < data.Length; i++)   // data[0] = {'ID', '캐릭터 이름', '대사'}
         {
             string[] row = data[i].Split(new char[] { ',' });
