@@ -8,4 +8,5 @@ public interface ITextData
     void SetDialogueData(string[] Text);
     int GetTextCount();
     void SetTextCount(int textCount);
+
 }

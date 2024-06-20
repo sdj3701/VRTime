@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ButtonDown" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAgAAAAAAAAEAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\TestScript\ButtonDown.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAIASAAAAAAAAAAAAAAAAAAAgAAAAAAAAI=</HashCode>
+      <FileName>Assets\Script\TestScript\Interface\TextData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RandomCubeColor" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\TestScript\RandomCubeColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dialogue" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\TestScript\TextRead\Dialogue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueEvent" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Assets\Script\TestScript\TextRead\DialogueEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueParse" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAABQAAAAAAAAAAAAAAAAAAAIAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Script\TestScript\TextRead\DialogueParse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InteractionEvent" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\TestScript\TextRead\InteractionEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SingleCharPrinter" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAIAAAAAAAAAAAAAwAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\TestScript\TextRead\SingleCharPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextReader" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAQAAAQAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\TestScript\TextRead\TextReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimateHand" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAACAAAAAgAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\SiHyunScript\AnimateHand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Readme" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAQAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\TutorialInfo\Scripts\Readme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TalkData" Collapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\TestScript\TextRead\Dialogue.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="IReadTextData" Collapsed="true">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\TestScript\Interface\IReadTextData.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ITextData" Collapsed="true">
+    <Position X="4.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAIACAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\TestScript\Interface\ITextData.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
