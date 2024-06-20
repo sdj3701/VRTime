@@ -4,9 +4,10 @@ using UnityEngine;
 
 public interface ITextData 
 {
-    string GetDialogueData(int frist, int second);
-    void SetDialogueData(string[] Text);
+    string GetDialogueData(int textNum, int frist, int second);
+    void SetDialogueData(int textNum, int row, int col, string Text);
     int GetTextCount();
     void SetTextCount(int textCount);
 
+    public void NewMemory(int textNum, int row, int col);
 }
