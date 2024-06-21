@@ -1448,6 +1448,7 @@ GameObject:
   - component: {fileID: 1822525302}
   - component: {fileID: 1822525301}
   - component: {fileID: 1822525300}
+  - component: {fileID: 1822525304}
   - component: {fileID: 1822525299}
   - component: {fileID: 1822525303}
   m_Layer: 0
@@ -1539,7 +1540,7 @@ Transform:
   m_GameObject: {fileID: 1822525298}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.990338, y: 1.09, z: -4.87}
+  m_LocalPosition: {x: 1.71, y: 0.93, z: -5.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1610,7 +1611,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1635,7 +1636,7 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -1649,6 +1650,18 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &1822525304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822525298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87b7a08a75d34f42aaa697187985a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1853486835
 GameObject:
   m_ObjectHideFlags: 0

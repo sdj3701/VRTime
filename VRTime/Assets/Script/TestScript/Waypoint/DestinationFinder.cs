@@ -8,18 +8,20 @@ public class DestinationFinder : MonoBehaviour
     private LineRenderer lineRenderer;
     private NavMeshAgent navAngent;
 
+    public IPositionable positionable;
 
     private Vector3 targetPos;
     private Transform originTransform;
 
     private void Start()
     {
-        //targetPos 
+        positionable = new Positionable();
+        originTransform = this.transform;
     }
 
     private void Update()
     {
-        //InitNaviManager()
+        InitNaviManager(originTransform, positionable.GetWayPointPosition(0), 0.1f);
     }
 
     public void InitNaviManager(Transform trans, Vector3 pos, float updateDelay)
@@ -32,6 +34,7 @@ public class DestinationFinder : MonoBehaviour
         lineRenderer.endWidth = 0.5f;
         lineRenderer.positionCount = 0;
 
+        // 쉐이더가 없어서 작동이 안됨
         Material mat = new Material(Shader.Find("Shader Graphs/SampleTwinkle"));
         mat.SetColor("_BaseColor", Color.green);
         lineRenderer.material = mat;

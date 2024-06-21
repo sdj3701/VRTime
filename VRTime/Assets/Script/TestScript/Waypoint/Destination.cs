@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Destination : MonoBehaviour
 {
-    public Transform[] WayPoint;
+    public GameObject[] WayPoint;
     public IPositionable positionable;
 
     private void Awake()

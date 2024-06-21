@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Positionable : IPositionable
 {
-    private Transform[] wayPointPositions;
-    public Transform GetWayPointPosition(int waypoint)
+    public static GameObject[] wayPointPositions;
+    public Vector3 GetWayPointPosition(int waypoint)
     {
-        return wayPointPositions[waypoint];
+        Debug.Log(waypoint);
+        Debug.Log(wayPointPositions[waypoint]);
+        return wayPointPositions[waypoint].transform.position;
     }
-    public void SetWayPointPosition(int waypoint, Transform wayPointPosition)
+    public void SetWayPointPosition(int waypoint, GameObject wayPointPosition)
     {
         wayPointPositions[waypoint] = wayPointPosition;
     }
     public void NewMemory(int memoriSize)
     {
-        wayPointPositions = new Transform[memoriSize];
+        wayPointPositions = new GameObject[memoriSize];
+        for (int i = 0; i < memoriSize; i++)
+        {
+            wayPointPositions[i] = null;
+        }
     }
 }
