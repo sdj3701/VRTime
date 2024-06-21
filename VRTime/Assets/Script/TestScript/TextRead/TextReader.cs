@@ -8,7 +8,7 @@ public class TextReader : MonoBehaviour
 {
     protected ITextData textData;
     protected IReadTextData readTextData;
-    protected string text;
+    public string text;
     //변경할 내용
     public TMP_Text targetText;
 

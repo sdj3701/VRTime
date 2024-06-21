@@ -8,7 +8,6 @@ using UnityEngine;
 public class SingleCharPrinter : TextReader
 {
     public float delay;
-    private int i = 1;
 
     public void Printer()
     {
@@ -20,7 +19,6 @@ public class SingleCharPrinter : TextReader
         StringBuilder builder = new StringBuilder(); // StringBuilder °´Ã¼ »ý¼º
         int count = 0;
 
-        yield return new WaitForSeconds(0.5f);
 
         while (count != text.Length)
         {
@@ -32,5 +30,7 @@ public class SingleCharPrinter : TextReader
             }
             yield return new WaitForSeconds(delay);
         }
+
+        yield return new WaitForSeconds(1f);
     }
 }

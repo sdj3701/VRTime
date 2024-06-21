@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEditor.UI;
 using TMPro;
+using System.Text;
+using UnityEngine.UI;
 
 public class InstantiateEaxmPanel : MonoBehaviour
 {
     public IReadTextData readTextData;
     public GameObject parentPanel;
-
-    private SingleCharPrinter singleCharPrinter;
 
     public GameObject NextButton;
     public GameObject SubmitButton;
@@ -23,19 +23,38 @@ public class InstantiateEaxmPanel : MonoBehaviour
     {
         readTextData = new ReadTextData();
         GameObject panelPrafab = Resources.Load<GameObject>("prefabs/Test Panel");
+
         if (panelPrafab != null)
         {
             for (int i = 0; i < readTextData.GetFileCount(); i++)
             {
                 // 프리팹 인스턴스화 (생성)
-                GameObject examPanel = Instantiate(panelPrafab);
-                // 인스턴스의 부모를 parentPanel로 설정
-                examPanel.transform.SetParent(parentPanel.transform, false);
+                GameObject examPanel = Instantiate(panelPrafab, parentPanel.transform);
+                examPanel.name = "testPanel" + (i + 1);
 
-                singleCharPrinter = examPanel.GetComponentInChildren<SingleCharPrinter>();
+                TextData textData = new TextData();
+                string dialogueText = textData.GetDialogueData(i, 0, 0);
+
+                SingleCharPrinter singleCharPrinter = examPanel.GetComponentInChildren<SingleCharPrinter>();
                 if (singleCharPrinter != null)
                 {
-                    singleCharPrinter.Printer();
+                    singleCharPrinter.text = dialogueText;
+                    TMP_Text textObject = examPanel.GetComponentInChildren<TMP_Text>();
+                    if (textObject != null)
+                    {
+                        textObject.gameObject.SetActive(true);
+                        textObject.name = "textObject" + (i + 1);
+                        singleCharPrinter.targetText = textObject;
+                        textObject.text = dialogueText;
+
+                        Debug.Log(i);
+                        Debug.Log(textObject.name + " : " + singleCharPrinter.text);
+                        Debug.Log(singleCharPrinter.text);
+                    }
+                    else
+                    {
+                        Debug.Log("textObject 없음");
+                    }
                 }
                 else
                 {
@@ -47,9 +66,17 @@ public class InstantiateEaxmPanel : MonoBehaviour
         {
             Debug.LogError("프리팹을 로드할 수 없습니다.");
         }
+    }
+
+    public void OnPrintingButton()
+    {
+        for (int i = 0; i < readTextData.GetFileCount(); i++)
+        {
+            
+        }
 
         AddPanelArray();
-        ActivatePanel(testPanelIndex);
+        //ActivatePanel(testPanelIndex);
     }
 
     public void OnBeforeButtonClick()

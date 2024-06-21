@@ -202,8 +202,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4964980ea0a973a4d95df77065960beb, type: 2}
+  m_sharedMaterial: {fileID: 7840808531534712574, guid: 4964980ea0a973a4d95df77065960beb,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -395,9 +396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fa81e1367a963449903f2dbc1f3156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: 
   targetText: {fileID: 9031957439706166962}
   delay: 0
-  ReadTextName: 
 --- !u!1001 &1491864254793631640
 PrefabInstance:
   m_ObjectHideFlags: 0
