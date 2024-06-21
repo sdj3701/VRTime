@@ -13,4 +13,8 @@ public class Positionable : IPositionable
     {
         wayPointPositions[waypoint] = wayPointPosition;
     }
+    public void NewMemory(int memoriSize)
+    {
+        wayPointPositions = new Transform[memoriSize];
+    }
 }

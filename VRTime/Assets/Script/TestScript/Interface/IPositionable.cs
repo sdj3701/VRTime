@@ -6,5 +6,6 @@ public interface IPositionable
 {
     public Transform GetWayPointPosition(int waypoint);
     public void SetWayPointPosition(int waypoint, Transform wayPointPosition);
+    public void NewMemory(int memoriSize);
 
 }

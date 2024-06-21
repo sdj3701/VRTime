@@ -5,41 +5,81 @@ using UnityEngine.AI;
 
 public class DestinationFinder : MonoBehaviour
 {
-    public GameObject target;
-    NavMeshAgent agent;
-    LineRenderer lr;
+    private LineRenderer lineRenderer;
+    private NavMeshAgent navAngent;
 
-    void Start()
-    {
-        agent = this.GetComponent<NavMeshAgent>();
 
-        lr = this.GetComponent<LineRenderer>();
-        lr.startWidth = lr.endWidth = 0.1f;
-        lr.material.color = Color.blue;
-        lr.enabled = false;
-    }
-    public void makePath()
+    private Vector3 targetPos;
+    private Transform originTransform;
+
+    private void Start()
     {
-        lr.enabled = true;
-        StartCoroutine(makePathCoroutine());
+        //targetPos 
     }
 
-    IEnumerator makePathCoroutine()
+    private void Update()
     {
-        agent.SetDestination(target.transform.position);
-        lr.SetPosition(0, this.transform.position);
-
-        yield return new WaitForSeconds(0.1f);
-
-        drawPath();
+        //InitNaviManager()
     }
 
-    void drawPath()
+    public void InitNaviManager(Transform trans, Vector3 pos, float updateDelay)
     {
-        int length = agent.path.corners.Length;
+        SetOriginTransform(trans);
+        SetDestination(pos);
 
-        lr.positionCount = length;
-        for (int i = 1; i < length; i++)
-            lr.SetPosition(i, agent.path.corners[i]);
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.startWidth = 0.5f;
+        lineRenderer.endWidth = 0.5f;
+        lineRenderer.positionCount = 0;
+
+        Material mat = new Material(Shader.Find("Shader Graphs/SampleTwinkle"));
+        mat.SetColor("_BaseColor", Color.green);
+        lineRenderer.material = mat;
+
+        navAngent = GetComponent<NavMeshAgent>();
+        navAngent.isStopped = true;
+        navAngent.radius = 1.0f;
+        navAngent.height = 1.0f;
+
+        StartCoroutine(UpdateNavi(updateDelay));
+
+    }
+
+    private IEnumerator UpdateNavi(float updateDelay)
+    {
+        WaitForSeconds delay = new WaitForSeconds(updateDelay);
+        while (true)
+        {
+            transform.position = originTransform.position;
+            navAngent.SetDestination(targetPos);
+            yield return delay;
+        }
+    }
+
+    public void SetDestination(Vector3 pos)
+    {
+        targetPos = pos;
+    }
+
+    public void SetOriginTransform(Transform trans)
+    {
+        originTransform = trans;
+        transform.position = originTransform.position;
+    }
+
+    private void DrawPath()
+    {
+        lineRenderer.positionCount = navAngent.path.corners.Length;
+        lineRenderer.SetPosition(0, transform.position);
+
+        if (navAngent.path.corners.Length < 2)
+        {
+            return;
+        }
+
+        for (int i = 1; i < navAngent.path.corners.Length; ++i)
+        {
+            lineRenderer.SetPosition(i, navAngent.path.corners[i]);
+        }
     }
 }
