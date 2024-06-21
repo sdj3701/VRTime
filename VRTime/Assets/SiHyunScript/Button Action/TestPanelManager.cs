@@ -62,10 +62,12 @@ public class TestPanelManager : MonoBehaviour
 
     public void ActivatePanel(int _testPanelIndex)
     {
-        testPanels[_testPanelIndex].SetActive(true);
+        for (int i = 0; i < testPanels.Length; i++)
+        {
+            testPanels[i].SetActive(i == _testPanelIndex);
+        }
     }
-
-    public void AddPanelArray()
+        public void AddPanelArray()
     {
         int panelCount = this.transform.childCount;
         testPanels = new GameObject[panelCount - 3];

@@ -20,6 +20,8 @@ public class SingleCharPrinter : TextReader
         StringBuilder builder = new StringBuilder(); // StringBuilder °´Ã¼ »ý¼º
         int count = 0;
 
+        yield return new WaitForSeconds(0.5f);
+
         while (count != text.Length)
         {
             if (count < text.Length)
