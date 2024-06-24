@@ -5,6 +5,7 @@ using UnityEngine;
 public class Positionable : IPositionable
 {
     public static GameObject[] wayPointPositions;
+    public static int wayPointCount = 0;
     public Vector3 GetWayPointPosition(int waypoint)
     {
         return wayPointPositions[waypoint].transform.position;
@@ -20,5 +21,13 @@ public class Positionable : IPositionable
         {
             wayPointPositions[i] = null;
         }
+    }
+    public void SetWayCount(int num)
+    {
+        wayPointCount += num;
+    }
+    public int GetWayCount()
+    {
+        return wayPointCount;
     }
 }
