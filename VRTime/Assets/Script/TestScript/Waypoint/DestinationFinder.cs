@@ -34,8 +34,8 @@ public class DestinationFinder : MonoBehaviour
         lineRenderer.endWidth = 0.5f;
         lineRenderer.positionCount = 0;
 
-        // 쉐이더가 없어서 작동이 안됨
-        Material mat = new Material(Shader.Find("Shader Graphs/SampleTwinkle"));
+        //셰이더 파일이름에 주소로 가지고 와야 찾음
+        Material mat = new Material(Shader.Find("Custom/SampleTwinkle"));
         mat.SetColor("_BaseColor", Color.green);
         lineRenderer.material = mat;
 
@@ -45,7 +45,6 @@ public class DestinationFinder : MonoBehaviour
         navAngent.height = 1.0f;
 
         StartCoroutine(UpdateNavi(updateDelay));
-
     }
 
     private IEnumerator UpdateNavi(float updateDelay)
@@ -55,6 +54,9 @@ public class DestinationFinder : MonoBehaviour
         {
             transform.position = originTransform.position;
             navAngent.SetDestination(targetPos);
+
+            DrawPath();
+
             yield return delay;
         }
     }

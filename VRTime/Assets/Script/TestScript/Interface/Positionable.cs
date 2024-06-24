@@ -7,8 +7,6 @@ public class Positionable : IPositionable
     public static GameObject[] wayPointPositions;
     public Vector3 GetWayPointPosition(int waypoint)
     {
-        Debug.Log(waypoint);
-        Debug.Log(wayPointPositions[waypoint]);
         return wayPointPositions[waypoint].transform.position;
     }
     public void SetWayPointPosition(int waypoint, GameObject wayPointPosition)
