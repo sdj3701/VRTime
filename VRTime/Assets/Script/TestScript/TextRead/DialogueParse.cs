@@ -58,7 +58,7 @@ public class DialogueParse : MonoBehaviour
         TextAsset csvData = Resources.Load<TextAsset>(_CSVFileName);
         string[] row = csvData.text.Split(new char[] { '\n' });
 
-        readTextData.SetFileColCount(textNum, row.Length);
+        readTextData.SetFileRowCount(textNum, row.Length);
 
         // CSV 파일 이름을 최우선으로 넣기위한 작업
         string[] splitdata = _CSVFileName.Split(new char[] { '\n' });
