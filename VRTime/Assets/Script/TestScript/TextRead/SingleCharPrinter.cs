@@ -8,7 +8,6 @@ using UnityEngine;
 public class SingleCharPrinter : TextReader
 {
     public float delay;
-    private int i = 1;
 
     public void Printer()
     {

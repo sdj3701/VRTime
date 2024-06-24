@@ -595,7 +595,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -730,7 +731,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: 0184bb84693ff7d45a498b59e3b799d0, type: 2}
   m_sharedMaterial: {fileID: 9124156277253124259, guid: 0184bb84693ff7d45a498b59e3b799d0,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 9124156277253124259, guid: 0184bb84693ff7d45a498b59e3b799d0, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1377,7 +1379,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: 0184bb84693ff7d45a498b59e3b799d0, type: 2}
   m_sharedMaterial: {fileID: 9124156277253124259, guid: 0184bb84693ff7d45a498b59e3b799d0,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 9124156277253124259, guid: 0184bb84693ff7d45a498b59e3b799d0, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1542,7 +1545,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetText: {fileID: 1101472110}
   delay: 0
-  ReadTextName: TestText
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,7 +2068,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: 0184bb84693ff7d45a498b59e3b799d0, type: 2}
   m_sharedMaterial: {fileID: 9124156277253124259, guid: 0184bb84693ff7d45a498b59e3b799d0,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 9124156277253124259, guid: 0184bb84693ff7d45a498b59e3b799d0, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2853,7 +2856,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetText: {fileID: 632169929}
   delay: 0.125
-  ReadTextName: dialogue_test_1
 --- !u!1 &2061761947
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public interface IPositionable 
 {
-    public Transform GetWayPointPosition(int waypoint);
-    public void SetWayPointPosition(int waypoint, Transform wayPointPosition);
+    public Vector3 GetWayPointPosition(int waypoint);
+    public void SetWayPointPosition(int waypoint, GameObject wayPointPosition);
+    public void NewMemory(int memoriSize);
 
 }
