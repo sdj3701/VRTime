@@ -17,7 +17,7 @@ public class TextReader : MonoBehaviour
     {
         readTextData = new ReadTextData();
         textData = new TextData();
-        text = textData.GetDialogueData(0, 0, 0);
-        targetText.text = " ";
+        //text = textData.GetDialogueData(0, 0, 0);
+        //targetText.text = " ";
     }
 }

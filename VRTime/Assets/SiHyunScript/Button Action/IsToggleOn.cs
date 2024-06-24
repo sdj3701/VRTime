@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,7 @@ public class IsToggleOn : MonoBehaviour
     private void OnToggleValueChanged(bool isOn)
     {
         Image image = toggle.transform.Find("Background").GetComponent<Image>();
-        Text text = toggle.transform.Find("Label").GetComponent<Text>();
+        TMP_Text text = toggle.transform.Find("Text (TMP)").GetComponent<TMP_Text>();
 
         if (isOn)
         {
