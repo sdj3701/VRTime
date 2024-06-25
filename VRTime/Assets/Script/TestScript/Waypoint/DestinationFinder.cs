@@ -21,7 +21,7 @@ public class DestinationFinder : MonoBehaviour
 
     private void Update()
     {
-        InitNaviManager(originTransform, positionable.GetWayPointPosition(0), 0.1f);
+        InitNaviManager(originTransform, positionable.GetWayPointPosition(positionable.GetWayCount()), 0.1f);
     }
 
     public void InitNaviManager(Transform trans, Vector3 pos, float updateDelay)
