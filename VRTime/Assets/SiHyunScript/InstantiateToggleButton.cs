@@ -16,7 +16,9 @@ public class InstantiateToggleButton : MonoBehaviour
     {
         readTextData = new ReadTextData();
         GameObject togglePrafab = Resources.Load<GameObject>("prefabs/Toggle");
-        
+        ToggleGroup toggleGroup = gameObject.AddComponent<ToggleGroup>();
+
+
         string examNumber = this.name.Replace("testPanel", "");
         int num = int.Parse(examNumber);
 
@@ -30,14 +32,33 @@ public class InstantiateToggleButton : MonoBehaviour
                 if (dialogueText != null)
                 {
                     GameObject toggleObject = Instantiate(togglePrafab, parant.transform);
+                    Toggle toggle = toggleObject.GetComponent<Toggle>();
                     
                     SingleCharPrinter singleCharPrinter = toggleObject.GetComponent<SingleCharPrinter>();
                     
                     if (singleCharPrinter != null)
                     {
+                        toggle.group = toggleGroup;
+                        toggleGroup.allowSwitchOff = false;
+
+                        Image background = toggleObject.transform.Find("Background").GetComponent<Image>();
+                        if (background != null)
+                        {
+                            string imagePath = "NumberImage/" + (i + 1).ToString(); // 파일명은 1, 2, 3...으로 가정
+                            Sprite backgroundImage = Resources.Load<Sprite>(imagePath);
+                            if (backgroundImage != null)
+                            {
+                                background.sprite = backgroundImage;
+                                background.gameObject.SetActive(true);
+                            }
+                            else
+                            {
+                                Debug.LogWarning("Image not found at path: " + imagePath);
+                            }
+                        }
+
                         singleCharPrinter.text = dialogueText;
                         TMP_Text textObject = toggleObject.GetComponentInChildren<TMP_Text>();
-                        Debug.Log(textObject.name);
                         if (textObject != null)
                         {
                             singleCharPrinter.targetText = textObject;
