@@ -30,22 +30,18 @@ public class InstantiateToggleButton : MonoBehaviour
                 if (dialogueText != null)
                 {
                     GameObject toggleObject = Instantiate(togglePrafab, parant.transform);
-
+                    
                     SingleCharPrinter singleCharPrinter = toggleObject.GetComponent<SingleCharPrinter>();
                     
                     if (singleCharPrinter != null)
                     {
                         singleCharPrinter.text = dialogueText;
                         TMP_Text textObject = toggleObject.GetComponentInChildren<TMP_Text>();
+                        Debug.Log(textObject.name);
                         if (textObject != null)
                         {
-                            Debug.Log("SingleCharPrinter 초기 텍스트: " + singleCharPrinter.text);
+                            singleCharPrinter.targetText = textObject;
                             singleCharPrinter.Printer();
-                            Debug.Log("Printer 호출 후 TMP_Text 텍스트: " + textObject.text);
-
-                            // TMP_Text 직접 업데이트를 확인
-                            textObject.text = singleCharPrinter.text;
-                            Debug.Log("TMP_Text 직접 업데이트됨: " + textObject.text);
                         }
                         else
                         {

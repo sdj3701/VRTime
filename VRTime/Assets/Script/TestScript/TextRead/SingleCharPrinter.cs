@@ -12,17 +12,16 @@ public class SingleCharPrinter : TextReader
     public void Printer()
     {
         Debug.Log("실행되는중");
-        TMP_Text textObject = GetComponentInChildren<TMP_Text>();
-        if (textObject != null)
+        if (targetText != null)
         {
-            textObject.text = text;
-            Debug.Log("TMP_Text 업데이트됨: " + textObject.text);
+            targetText.text = text;
+            Debug.Log("Text : " + text);
+            Debug.Log("TMP_Text 업데이트됨: " + targetText.text);
         }
         else
         {
             Debug.LogError("TMP_Text 컴포넌트를 찾을 수 없음.");
         }
-        //StartCoroutine(textPrint(delay));
     }
 
     IEnumerator textPrint(float delay)
@@ -44,10 +43,5 @@ public class SingleCharPrinter : TextReader
         yield return new WaitForSeconds(1f);
 
         this.gameObject.SetActive(false);
-    }
-
-    public void ActivatePanel(int _testPanelIndex)
-    {
-        this.gameObject.SetActive(0 == _testPanelIndex);
     }
 }

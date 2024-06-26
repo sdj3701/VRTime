@@ -43,13 +43,8 @@ public class InstantiateEaxmPanel : MonoBehaviour
                     TMP_Text textObject = examPanel.GetComponentInChildren<TMP_Text>();
                     if (textObject != null)
                     {
-                        Debug.Log("SingleCharPrinter 초기 텍스트: " + singleCharPrinter.text);
+                        singleCharPrinter.targetText = textObject;
                         singleCharPrinter.Printer();
-                        Debug.Log("Printer 호출 후 TMP_Text 텍스트: " + textObject.text);
-
-                        // TMP_Text 직접 업데이트를 확인
-                        textObject.text = singleCharPrinter.text;
-                        Debug.Log("TMP_Text 직접 업데이트됨: " + textObject.text);
                     }
                     else
                     {

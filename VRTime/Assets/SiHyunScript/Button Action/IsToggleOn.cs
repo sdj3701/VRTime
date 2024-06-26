@@ -18,7 +18,7 @@ public class IsToggleOn : MonoBehaviour
     private void OnToggleValueChanged(bool isOn)
     {
         Image image = toggle.transform.Find("Background").GetComponent<Image>();
-        TMP_Text text = toggle.transform.Find("Text (TMP)").GetComponent<TMP_Text>();
+        TMP_Text text = toggle.transform.Find("TEXTPRO").GetComponent<TMP_Text>();
 
         if (isOn)
         {
