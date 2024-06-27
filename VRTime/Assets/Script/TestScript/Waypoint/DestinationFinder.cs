@@ -17,11 +17,14 @@ public class DestinationFinder : MonoBehaviour
     {
         positionable = new Positionable();
         originTransform = this.transform;
+        lineRenderer = GetComponent<LineRenderer>();
+
     }
 
     private void Update()
     {
-        InitNaviManager(originTransform, positionable.GetWayPointPosition(positionable.GetWayCount()), 0.1f);
+        if (!positionable.GetCheckPoint())
+            InitNaviManager(originTransform, positionable.GetWayPointPosition(positionable.GetWayCount()), 0.1f);
     }
 
     public void InitNaviManager(Transform trans, Vector3 pos, float updateDelay)
@@ -29,7 +32,7 @@ public class DestinationFinder : MonoBehaviour
         SetOriginTransform(trans);
         SetDestination(pos);
 
-        lineRenderer = GetComponent<LineRenderer>();
+        
         lineRenderer.startWidth = 0.5f;
         lineRenderer.endWidth = 0.5f;
         lineRenderer.positionCount = 0;

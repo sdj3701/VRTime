@@ -7,5 +7,5 @@ public interface IVideoData
 
     public void NewMemory(int VideoSize);
     public void SetVideoData(int videoNum, GameObject gameObject);
-    public GameObject GetVideoDat(int videoNum);
+    public GameObject GetVideoData(int videoNum);
 }

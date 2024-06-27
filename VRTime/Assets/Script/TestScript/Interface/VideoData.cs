@@ -11,7 +11,7 @@ public class VideoData : IVideoData
         videoObject[videoNum] = gameObject;
     }
 
-    public GameObject GetVideoDat(int videoNum)
+    public GameObject GetVideoData(int videoNum)
     {
         return videoObject[videoNum];
     }
