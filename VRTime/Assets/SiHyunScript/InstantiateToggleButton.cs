@@ -16,10 +16,10 @@ public class InstantiateToggleButton : MonoBehaviour
     {
         readTextData = new ReadTextData();
         GameObject togglePrafab = Resources.Load<GameObject>("prefabs/Toggle");
-        ToggleGroup toggleGroup = gameObject.AddComponent<ToggleGroup>();
+        ToggleGroup toggleGroup = gameObject.GetComponent<ToggleGroup>();
 
 
-        string examNumber = this.name.Replace("testPanel", "");
+        string examNumber = this.transform.parent.gameObject.name.Replace("testPanel", "");
         int num = int.Parse(examNumber);
 
         if (togglePrafab != null)
@@ -39,7 +39,7 @@ public class InstantiateToggleButton : MonoBehaviour
                     if (singleCharPrinter != null)
                     {
                         toggle.group = toggleGroup;
-                        toggleGroup.allowSwitchOff = false;
+                        toggleGroup.allowSwitchOff = true;
 
                         Image background = toggleObject.transform.Find("Background").GetComponent<Image>();
                         if (background != null)

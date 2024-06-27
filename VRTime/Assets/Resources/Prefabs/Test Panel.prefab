@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4909884160940342004}
   - component: {fileID: 8523725510091811199}
   - component: {fileID: 631696100530522743}
+  - component: {fileID: 3538783872802141866}
   m_Layer: 5
   m_Name: Answer Panel
   m_TagString: Untagged
@@ -133,6 +134,19 @@ MonoBehaviour:
     type: 3}
   toggleParent: {fileID: 869860100032982615}
   toggleGroup: {fileID: 8523725510091811199}
+--- !u!114 &3538783872802141866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591767050369915199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099acd703bf7f37438a727918ddf9903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parant: {fileID: 2591767050369915199}
 --- !u!1 &3783786812692555844
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +368,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1966281788485579774}
   - component: {fileID: 7949817037129379963}
-  - component: {fileID: 6557597889382768197}
   m_Layer: 5
   m_Name: Test Panel
   m_TagString: Untagged
@@ -398,16 +411,3 @@ MonoBehaviour:
   text: 
   targetText: {fileID: 9031957439706166962}
   delay: 0
---- !u!114 &6557597889382768197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6445093053325842347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 099acd703bf7f37438a727918ddf9903, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parant: {fileID: 2591767050369915199}
