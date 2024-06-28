@@ -26,9 +26,12 @@ public class VideoManager : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if(positionable.GetCheckPoint())
+        Debug.Log(videoPlayer.isPlaying);
+        Debug.Log(videoPlayer.name);
+
+        if (positionable.GetCheckPoint())
         {
             videoData.GetVideoData(0).gameObject.SetActive(true);
             if (count == 0)
@@ -36,7 +39,6 @@ public class VideoManager : MonoBehaviour
                 videoPlayer.Play();
                 count++;
             }
-
             if (videoPlayer.isPlaying)
             {
                 Debug.Log("Àç»ý Áß?");
