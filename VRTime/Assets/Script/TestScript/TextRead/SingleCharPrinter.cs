@@ -11,12 +11,12 @@ public class SingleCharPrinter : TextReader
 
     public void Printer()
     {
-        Debug.Log("실행되는중");
+        //Debug.Log("실행되는중");
         if (targetText != null)
         {
             targetText.text = text;
-            Debug.Log("Text : " + text);
-            Debug.Log("TMP_Text 업데이트됨: " + targetText.text);
+            //Debug.Log("Text : " + text);
+            //Debug.Log("TMP_Text 업데이트됨: " + targetText.text);
         }
         else
         {

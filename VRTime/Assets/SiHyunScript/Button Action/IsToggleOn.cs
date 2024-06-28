@@ -13,12 +13,13 @@ public class IsToggleOn : MonoBehaviour
 
         // 토글 이벤트 리스너 등록
         toggle.onValueChanged.AddListener(OnToggleValueChanged);
+
     }
 
     private void OnToggleValueChanged(bool isOn)
     {
         Image image = toggle.transform.Find("Background").GetComponent<Image>();
-        TMP_Text text = toggle.transform.Find("TEXTPRO").GetComponent<TMP_Text>();
+        TMP_Text text = toggle.GetComponentInChildren<TMP_Text>();
 
         if (isOn)
         {
