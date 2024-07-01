@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -57,6 +59,9 @@ public class DestinationFinder : MonoBehaviour
         {
             transform.position = originTransform.position;
             navAngent.SetDestination(targetPos);
+            Vector3 zeroy = transform.position;
+            zeroy.y = 0;
+            transform.position = zeroy;
 
             DrawPath();
 
@@ -67,12 +72,16 @@ public class DestinationFinder : MonoBehaviour
     public void SetDestination(Vector3 pos)
     {
         targetPos = pos;
+        targetPos.y = 0;
     }
 
     public void SetOriginTransform(Transform trans)
     {
         originTransform = trans;
         transform.position = originTransform.position;
+        Vector3 zeroy = transform.position;
+        zeroy.y = 0;
+        transform.position = zeroy;
     }
 
     private void DrawPath()

@@ -28,6 +28,7 @@ public class VideoManager : MonoBehaviour
         //충돌을 했는지 확인
         if (positionable.GetCheckPoint())
         {
+            // Fix 
             GameObject videoObject = videoData.GetVideoData(0);
             videoObject.SetActive(true);
 
