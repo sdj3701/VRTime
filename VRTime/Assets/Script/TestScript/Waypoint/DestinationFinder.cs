@@ -40,9 +40,9 @@ public class DestinationFinder : MonoBehaviour
         lineRenderer.positionCount = 0;
 
         //셰이더 파일이름에 주소로 가지고 와야 찾음
-        Material mat = new Material(Shader.Find("Custom/SampleTwinkle"));
-        mat.SetColor("_BaseColor", Color.green);
-        lineRenderer.material = mat;
+        Material mat = new Material(Shader.Find("Unlit/Ani2"));
+        //mat.SetColor("_BaseColor", Color.green);
+        //lineRenderer.material = mat;
 
         navAngent = GetComponent<NavMeshAgent>();
         navAngent.isStopped = true;
