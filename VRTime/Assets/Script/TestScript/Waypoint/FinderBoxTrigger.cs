@@ -6,6 +6,8 @@ public class FinderBoxTrigger : MonoBehaviour
 {
     public IPositionable positionable;
     public IVideoData videoData;
+    public AudioClip TestaudioClip = null;
+
     private void Start()
     {
         positionable = new Positionable();
