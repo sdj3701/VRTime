@@ -89,6 +89,12 @@ public class DestinationFinder : MonoBehaviour
         lineRenderer.positionCount = navAngent.path.corners.Length;
         lineRenderer.SetPosition(0, transform.position);
 
+        // 두 오브젝트의 사이의 거리에 따라 tiling 증가 시켜 이미지가 이상하지 않도록 보이게 함
+        float distance = Vector3.Distance(targetPos, transform.position);
+        //오브젝트 이름에 접근하는 방법은 셰이더 그래프를 눌러 해당 변수이름이 따로 있음
+        lineRenderer.material.SetFloat("_Float", -distance);
+
+
         if (navAngent.path.corners.Length < 2)
         {
             return;
