@@ -49,7 +49,28 @@ public class VideoManager : MonoBehaviour
                 Debug.Log("재생 끝");
                 // false이어야지 길을 찾음
                 positionable.SetCheckPoint(false);
+                if(!positionable.GetCheckPoint())
+                {
+                    GameObject test = GameObject.Find("Player");
+                    // true를 사용하면 비활성화된 오브젝트도 검색함
+                    Transform[] allChildren = test.gameObject.GetComponentsInChildren<Transform>(true);
 
+                    string targetObjectName1 = "Left Controller";
+                    string targetObjectName2 = "Right Controller";
+
+                    foreach (Transform child in allChildren)
+                    {
+                        if (child.gameObject.name == targetObjectName1)
+                            child.gameObject.SetActive(true);
+
+                        if (child.gameObject.name == targetObjectName2)
+                        {
+                            child.gameObject.SetActive(true);
+                            break;
+                        }
+                    }
+                }
+                
                 // 비디오 준비 완료 이벤트 해제
                 videoPlayer.prepareCompleted -= VideoPrepared;
 
