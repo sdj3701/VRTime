@@ -1543,6 +1543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fa81e1367a963449903f2dbc1f3156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: 
   targetText: {fileID: 1101472110}
   delay: 0
 --- !u!1 &832575517
@@ -2854,6 +2855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fa81e1367a963449903f2dbc1f3156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: 
   targetText: {fileID: 632169929}
   delay: 0.125
 --- !u!1 &2061761947

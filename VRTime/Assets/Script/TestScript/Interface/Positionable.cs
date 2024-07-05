@@ -6,6 +6,7 @@ public class Positionable : IPositionable
 {
     public static GameObject[] wayPointPositions;
     public static int wayPointCount = 0;
+    public static bool FindPoint = false;
     public Vector3 GetWayPointPosition(int waypoint)
     {
         return wayPointPositions[waypoint].transform.position;
@@ -29,5 +30,13 @@ public class Positionable : IPositionable
     public int GetWayCount()
     {
         return wayPointCount;
+    }
+    public void SetCheckPoint(bool check)
+    {
+        FindPoint = check;
+    }
+    public bool GetCheckPoint()
+    {
+        return FindPoint;
     }
 }
