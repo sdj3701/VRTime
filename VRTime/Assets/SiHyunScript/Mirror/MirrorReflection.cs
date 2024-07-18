@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class MirrorReflection : MonoBehaviour
 {
-    public Transform playerTarget;
-    public Transform mirror;
+    public Transform playerCam;
+    public Transform mirrorCam;
 
-    void Update()
+    private void Update()
     {
-        Vector3 localPlayer = mirror.InverseTransformPoint(playerTarget.position);
-        this.transform.position = mirror.TransformPoint(new Vector3(localPlayer.x, localPlayer.y, -localPlayer.z));
+        Vector3 posZ = new Vector3 (this.transform.position.x, playerCam.transform.position.y , this.transform.position.z);
+        Vector3 side1 = playerCam.transform.position - posZ;
+        Vector3 side2 = this.transform.forward;
+        float angle = Vector3.SignedAngle(side1, side2, Vector3.up);
 
-        Vector3 lookAtMirror = mirror.TransformPoint(new Vector3(-localPlayer.x, localPlayer.y, localPlayer.z));
-        transform.LookAt(lookAtMirror);
+        mirrorCam.localEulerAngles = new Vector3 (0, angle, 0);
     }
 }
