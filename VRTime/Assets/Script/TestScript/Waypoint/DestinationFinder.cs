@@ -26,14 +26,21 @@ public class DestinationFinder : MonoBehaviour
     private void Update()
     {
         if (!positionable.GetCheckPoint())
+        {
+            Debug.Log("길 찾는 중" + positionable.GetCheckPoint() + " " + positionable.GetWayCount());
             InitNaviManager(originTransform, positionable.GetWayPointPosition(positionable.GetWayCount()), 0.1f);
+        }
+        /*else
+        {
+            TODO : 나중에 영상 나올때는 끄기 기능 추가 지금 아래로 떨어지는 버그 있음(하지만 VR 사용 안할때)
+            lineRenderer.gameObject.SetActive(false);
+        }*/
     }
 
     public void InitNaviManager(Transform trans, Vector3 pos, float updateDelay)
     {
         SetOriginTransform(trans);
         SetDestination(pos);
-
         
         lineRenderer.startWidth = 0.5f;
         lineRenderer.endWidth = 0.5f;

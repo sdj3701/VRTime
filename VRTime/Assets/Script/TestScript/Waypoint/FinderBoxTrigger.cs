@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class FinderBoxTrigger : MonoBehaviour
     public IPositionable positionable;
     public IVideoData videoData;
     public AudioClip TestaudioClip = null;
+    // 이벤트 테스트
+    public event Action<int> MyEvent;
 
     private void Start()
     {
@@ -16,7 +19,7 @@ public class FinderBoxTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "Player")
+        if(other.gameObject.name == "Player" && !positionable.GetCheckPoint())
         {
             //음성 경로로 찾아서 넣어서 재생
             AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
@@ -51,6 +54,8 @@ public class FinderBoxTrigger : MonoBehaviour
                 }
             }
             positionable.SetWayCount(1);
+            EventPublisher publisher = EventPublisher.Instance;
+            publisher.InvokeEvent(positionable.GetWayCount());
         }
     }
 }
