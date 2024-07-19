@@ -9,12 +9,11 @@ public class VitrualCamearaManager : MonoBehaviour
 
     private void Start()
     {
-        FinderBoxTrigger publisher = new FinderBoxTrigger();
-
-        publisher.MyEvent += ChangePriority;
+        var p = FindObjectOfType<FinderBoxTrigger>();
+        p.MyEvent.AddListener(ChangePriority);
     }
 
-    void ChangePriority(int newPriority)
+    public void ChangePriority(int newPriority)
     {
         Debug.Log("count++ : " + newPriority);
         if (VirtualCamera[newPriority].name == "Virtual Camera" + newPriority)

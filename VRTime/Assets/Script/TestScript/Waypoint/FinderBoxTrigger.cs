@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FinderBoxTrigger : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class FinderBoxTrigger : MonoBehaviour
     public IVideoData videoData;
     public AudioClip TestaudioClip = null;
     // 이벤트 테스트
-    public event Action<int> MyEvent;
+    public UnityEvent<int> MyEvent;
 
     private void Start()
     {
@@ -48,14 +49,14 @@ public class FinderBoxTrigger : MonoBehaviour
                     if (child.gameObject.name == targetObjectName2)
                     {
                         child.gameObject.SetActive(false);
-                        Debug.Log("GrandchildName 오브젝트를 비활성화했습니다.");
+                        Debug.Log("Hand 오브젝트를 비활성화했습니다.");
                         break;
                     }
                 }
             }
             positionable.SetWayCount(1);
-            EventPublisher publisher = EventPublisher.Instance;
-            publisher.InvokeEvent(positionable.GetWayCount());
+            //Debug.Log(positionable.GetWayCount());
+            MyEvent.Invoke(positionable.GetWayCount());
         }
     }
 }
