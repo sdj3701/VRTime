@@ -28,6 +28,10 @@ public class DestinationFinder : MonoBehaviour
     {
         if (!positionable.GetCheckPoint())
         {
+            if (ChildCamera != null)
+                ChildCamera.gameObject.SetActive(false);
+            else
+                Debug.LogError("Camera Not Find Object");
             lineRenderer.enabled = true;
             InitNaviManager(originTransform, positionable.GetWayPointPosition(positionable.GetWayCount()), 0.1f);
         }
@@ -35,7 +39,7 @@ public class DestinationFinder : MonoBehaviour
         {
             lineRenderer.enabled = false;
             if (ChildCamera != null)
-                ChildCamera.gameObject.SetActive(false);
+                ChildCamera.gameObject.SetActive(true);
             else
                 Debug.LogError("Camera Not Find Object");
         }

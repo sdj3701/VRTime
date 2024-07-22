@@ -51,7 +51,7 @@ public class VideoManager : MonoBehaviour
                 positionable.SetCheckPoint(false);
                 if(!positionable.GetCheckPoint())
                 {
-                    GameObject test = GameObject.Find("Player");
+                    GameObject test = GameObject.Find("Main Camera1");
                     // true를 사용하면 비활성화된 오브젝트도 검색함
                     Transform[] allChildren = test.gameObject.GetComponentsInChildren<Transform>(true);
 
