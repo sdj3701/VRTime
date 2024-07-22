@@ -11,6 +11,7 @@ public class DestinationFinder : MonoBehaviour
     private NavMeshAgent navAngent;
 
     public IPositionable positionable;
+    public GameObject ChildCamera;
 
     private Vector3 targetPos;
     private Transform originTransform;
@@ -27,14 +28,17 @@ public class DestinationFinder : MonoBehaviour
     {
         if (!positionable.GetCheckPoint())
         {
-            Debug.Log("길 찾는 중" + positionable.GetCheckPoint() + " " + positionable.GetWayCount());
+            lineRenderer.enabled = true;
             InitNaviManager(originTransform, positionable.GetWayPointPosition(positionable.GetWayCount()), 0.1f);
         }
-        /*else
+        else
         {
-            TODO : 나중에 영상 나올때는 끄기 기능 추가 지금 아래로 떨어지는 버그 있음(하지만 VR 사용 안할때)
-            lineRenderer.gameObject.SetActive(false);
-        }*/
+            lineRenderer.enabled = false;
+            if (ChildCamera != null)
+                ChildCamera.gameObject.SetActive(false);
+            else
+                Debug.LogError("Camera Not Find Object");
+        }
     }
 
     public void InitNaviManager(Transform trans, Vector3 pos, float updateDelay)
