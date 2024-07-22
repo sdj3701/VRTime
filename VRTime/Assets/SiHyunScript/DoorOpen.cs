@@ -4,61 +4,55 @@ using UnityEngine;
 
 public class DoorOpen : MonoBehaviour
 {
-    public GameObject targetObject; // 이동할 오브젝트
-    public float moveDistance = 5.0f; // 이동할 거리
-    public float smoothTime = 0.3f; // 이동 속도를 제어하는 시간 상수
+    public Transform leftDoor; // 왼쪽 문 오브젝트의 Transform
+    public Transform rightDoor; // 오른쪽 문 오브젝트의 Transform
 
-    private Vector3 originalPosition;
-    private Vector3 targetPosition;
-    private Vector3 velocity = Vector3.zero; // SmoothDamp에서 사용할 속도 변수
-    private bool shouldMoveUp = false;
-    private bool shouldMoveDown = false;
+    public Vector3 leftDoorOpenLocalPosition; // 왼쪽 문이 열렸을 때의 로컬 위치
+    public Vector3 leftDoorClosedLocalPosition; // 왼쪽 문이 닫혔을 때의 로컬 위치
+    public Vector3 rightDoorOpenLocalPosition; // 오른쪽 문이 열렸을 때의 로컬 위치
+    public Vector3 rightDoorClosedLocalPosition; // 오른쪽 문이 닫혔을 때의 로컬 위치
+
+    public float speed = 2.0f; // 문이 이동하는 속도
+
+    private Vector3 leftDoorTargetLocalPosition; // 왼쪽 문의 목표 로컬 위치
+    private Vector3 rightDoorTargetLocalPosition; // 오른쪽 문의 목표 로컬 위치
 
     void Start()
     {
-        if (targetObject != null)
-        {
-            originalPosition = targetObject.transform.position;
-        }
+        leftDoorTargetLocalPosition = leftDoorClosedLocalPosition; // 초기에는 왼쪽 문을 닫힌 상태로 설정
+        rightDoorTargetLocalPosition = rightDoorClosedLocalPosition; // 초기에는 오른쪽 문을 닫힌 상태로 설정
     }
 
-    void Update()
+    void MoveDoors()
     {
-        if (targetObject != null)
+        leftDoor.localPosition = Vector3.MoveTowards(leftDoor.localPosition, leftDoorTargetLocalPosition, speed * Time.deltaTime);
+        rightDoor.localPosition = Vector3.MoveTowards(rightDoor.localPosition, rightDoorTargetLocalPosition, speed * Time.deltaTime);
+
+        // 문이 목표 위치에 도달하면 InvokeRepeating을 중지하여 반복 호출을 취소함
+        if (leftDoor.localPosition == leftDoorTargetLocalPosition && rightDoor.localPosition == rightDoorTargetLocalPosition)
         {
-            if (shouldMoveUp)
-            {
-                targetPosition = originalPosition + Vector3.up * moveDistance;
-                targetObject.transform.position = Vector3.SmoothDamp(targetObject.transform.position, targetPosition, ref velocity, smoothTime);
-            }
-            else if (shouldMoveDown)
-            {
-                targetPosition = originalPosition;
-                targetObject.transform.position = Vector3.SmoothDamp(targetObject.transform.position, targetPosition, ref velocity, smoothTime);
-            }
+            CancelInvoke("MoveDoors");
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // 플레이어의 태그가 "Player"라고 가정
+        if (other.CompareTag("Player")) // 플레이어 태그를 가진 오브젝트가 들어왔을 때
         {
-            shouldMoveUp = true;
-            shouldMoveDown = false;
+            leftDoorTargetLocalPosition = leftDoorOpenLocalPosition; // 왼쪽 문의 목표 위치를 열린 위치로 설정
+            rightDoorTargetLocalPosition = rightDoorOpenLocalPosition; // 오른쪽 문의 목표 위치를 열린 위치로 설정
+            InvokeRepeating("MoveDoors", 0, 0.02f); // MoveDoors를 반복 호출
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")) // 플레이어 태그를 가진 오브젝트가 나갔을 때
         {
-            shouldMoveUp = false;
-            shouldMoveDown = true;
+            leftDoorTargetLocalPosition = leftDoorClosedLocalPosition; // 왼쪽 문의 목표 위치를 닫힌 위치로 설정
+            rightDoorTargetLocalPosition = rightDoorClosedLocalPosition; // 오른쪽 문의 목표 위치를 닫힌 위치로 설정
+            InvokeRepeating("MoveDoors", 0, 0.02f); // MoveDoors를 반복 호출
         }
     }
-
-    private void OnTriggerStay(Collider other)
-    {
-        
-    }
 }
+
