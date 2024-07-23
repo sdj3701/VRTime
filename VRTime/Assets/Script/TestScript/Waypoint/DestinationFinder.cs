@@ -11,7 +11,6 @@ public class DestinationFinder : MonoBehaviour
     private NavMeshAgent navAngent;
 
     public IPositionable positionable;
-    public GameObject ChildCamera;
 
     private Vector3 targetPos;
     private Transform originTransform;
@@ -28,20 +27,12 @@ public class DestinationFinder : MonoBehaviour
     {
         if (!positionable.GetCheckPoint())
         {
-            if (ChildCamera != null)
-                ChildCamera.gameObject.SetActive(false);
-            else
-                Debug.LogError("Camera Not Find Object");
             lineRenderer.enabled = true;
             InitNaviManager(originTransform, positionable.GetWayPointPosition(positionable.GetWayCount()), 0.1f);
         }
         else
         {
             lineRenderer.enabled = false;
-            if (ChildCamera != null)
-                ChildCamera.gameObject.SetActive(true);
-            else
-                Debug.LogError("Camera Not Find Object");
         }
     }
 

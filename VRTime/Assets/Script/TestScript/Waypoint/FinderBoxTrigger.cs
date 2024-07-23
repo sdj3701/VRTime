@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,6 +13,11 @@ public class FinderBoxTrigger : MonoBehaviour
     // 이벤트 테스트
     public UnityEvent<int> MyEvent;
 
+    //나중에 인터페이스로 값을 가져와도 됨
+    public GameObject ChildCamera;
+    public GameObject VideoCamera;
+
+
     private void Start()
     {
         positionable = new Positionable();
@@ -20,8 +26,14 @@ public class FinderBoxTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "Player" && !positionable.GetCheckPoint())
+        ChildCamera.gameObject.SetActive(false);
+        VideoCamera.gameObject.SetActive(true);
+        AudioListener audioListener = VideoCamera.GetComponent<AudioListener>();
+        audioListener.enabled = true;
+
+        if (other.gameObject.name == "Player" && !positionable.GetCheckPoint())
         {
+            
             //음성 경로로 찾아서 넣어서 재생
             AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
             AudioClip audioClip = Resources.Load<AudioClip>("Sound/rightnow");
@@ -54,8 +66,8 @@ public class FinderBoxTrigger : MonoBehaviour
                     }
                 }
             }
+            
             positionable.SetWayCount(1);
-            //Debug.Log(positionable.GetWayCount());
             MyEvent.Invoke(positionable.GetWayCount());
         }
     }
