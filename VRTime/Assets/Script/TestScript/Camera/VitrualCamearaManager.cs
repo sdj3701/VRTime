@@ -5,7 +5,8 @@ using Cinemachine;
 
 public class VitrualCamearaManager : MonoBehaviour
 {
-    public CinemachineVirtualCamera[] VirtualCamera;
+    //public CinemachineVirtualCamera[] VirtualCamera; 
+    public CinemachineBlendListCamera[] BlendList;
 
     private void Start()
     {
@@ -16,14 +17,15 @@ public class VitrualCamearaManager : MonoBehaviour
     public void ChangePriority(int newPriority)
     {
         Debug.Log("count++ : " + newPriority);
-        if (VirtualCamera[newPriority].name == "Virtual Camera" + newPriority)
+        BlendList[newPriority - 1].Priority = 10 + newPriority;
+       /* if (VirtualCamera[newPriority].name == "Virtual Camera" + newPriority)
         {
             VirtualCamera[newPriority].Priority = 10 + newPriority;
-        }
+        }*/
     }
 
     void ResetPriority(int newPriority)
     {
-        VirtualCamera[newPriority].Priority = 10;
+        //VirtualCamera[newPriority].Priority = 10;
     }
 }
