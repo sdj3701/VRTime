@@ -17,7 +17,7 @@ public class VitrualCamearaManager : MonoBehaviour
     public void ChangePriority(int newPriority)
     {
         Debug.Log("count++ : " + newPriority);
-        BlendList[newPriority - 1].Priority = 10 + newPriority;
+        //BlendList[newPriority - 1].Priority = 10 + newPriority;
        /* if (VirtualCamera[newPriority].name == "Virtual Camera" + newPriority)
         {
             VirtualCamera[newPriority].Priority = 10 + newPriority;

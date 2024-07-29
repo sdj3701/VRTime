@@ -1112,8 +1112,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701752853}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06177331, y: -0.7375873, z: 0.06811031, w: 0.668962}
-  m_LocalPosition: {x: 10.141363, y: 2.128638, z: -11.053276}
+  m_LocalRotation: {x: 0.034341194, y: 0.0037424844, z: 0.04605865, w: 0.99834126}
+  m_LocalPosition: {x: 10.364247, y: 2.474427, z: -11.555508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3149,13 +3149,13 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
-  m_Loop: 1
+  m_Loop: 0
   m_ChildCameras:
   - {fileID: 611203536}
   - {fileID: 10916176}
   m_Instructions:
-  - m_VirtualCamera: {fileID: 10916176}
-    m_Hold: 3
+  - m_VirtualCamera: {fileID: 611203536}
+    m_Hold: 1
     m_Blend:
       m_Style: 1
       m_Time: 2
@@ -3166,6 +3166,17 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
   - m_VirtualCamera: {fileID: 611203536}
+    m_Hold: 3
+    m_Blend:
+      m_Style: 1
+      m_Time: 2
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - m_VirtualCamera: {fileID: 10916176}
     m_Hold: 3
     m_Blend:
       m_Style: 1
