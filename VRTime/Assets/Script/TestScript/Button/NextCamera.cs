@@ -20,6 +20,7 @@ public class NextCamera : MonoBehaviour
 
     public void OnButtonClick()
     {
+        Debug.Log("test");
         if (BlendListCamera != null)
             SwitchCamera(TargetIndex);
     }
