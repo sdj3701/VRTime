@@ -16,6 +16,7 @@ public class FinderBoxTrigger : MonoBehaviour
     //나중에 인터페이스로 값을 가져와도 됨
     public GameObject ChildCamera;
     public GameObject VideoCamera;
+    public GameObject CameraManager;
 
 
     private void Start()
@@ -26,11 +27,12 @@ public class FinderBoxTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ChildCamera.gameObject.SetActive(false);
-        VideoCamera.gameObject.SetActive(true);
+        CameraManager.gameObject.SetActive(true);
+        //ChildCamera.gameObject.SetActive(false);
+        //VideoCamera.gameObject.SetActive(true);
         AudioListener audioListener = VideoCamera.GetComponent<AudioListener>();
         audioListener.enabled = true;
-
+        Debug.Log(other.gameObject.name);
         if (other.gameObject.name == "Player" && !positionable.GetCheckPoint())
         {
             
