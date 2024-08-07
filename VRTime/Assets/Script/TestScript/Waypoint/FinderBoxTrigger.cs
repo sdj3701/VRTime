@@ -28,11 +28,10 @@ public class FinderBoxTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         CameraManager.gameObject.SetActive(true);
-        //ChildCamera.gameObject.SetActive(false);
-        //VideoCamera.gameObject.SetActive(true);
+        ChildCamera.gameObject.SetActive(false);
+        VideoCamera.gameObject.SetActive(true);
         AudioListener audioListener = VideoCamera.GetComponent<AudioListener>();
         audioListener.enabled = true;
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.name == "Player" && !positionable.GetCheckPoint())
         {
             
