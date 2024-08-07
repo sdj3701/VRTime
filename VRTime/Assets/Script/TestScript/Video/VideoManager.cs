@@ -21,8 +21,8 @@ public class VideoManager : MonoBehaviour
             videoData.SetVideoData(i, videoObject[i]);
             videoData.GetVideoData(i).gameObject.SetActive(false);
         }
-
     }
+
     private void Update()
     {
         //충돌을 했는지 확인
