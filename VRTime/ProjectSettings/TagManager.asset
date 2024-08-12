@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Left Controller
   - Right Controller
+  - suit
+  - mask
+  - shoes
+  - glove
+  - haircap
   layers:
   - Default
   - TransparentFX
