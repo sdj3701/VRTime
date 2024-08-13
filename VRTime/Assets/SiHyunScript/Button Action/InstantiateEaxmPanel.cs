@@ -229,7 +229,7 @@ public class InstantiateEaxmPanel : MonoBehaviour
         {
             Debug.Log("모든 문제를 맞추셨습니다!");
         }
-
+        // 배점에 따른 계산 추가
         // 점수 계산 및 출력
         score = (int)(((float)answerCount / answerList.Count) * 100); // 점수 계산
         IncorrecCount.text = resultTextString;
