@@ -23,9 +23,33 @@ public class CharacterPositionTP : MonoBehaviour
     void CheckActiveCamera()
     {
         // 현재 활성화된 가상 카메라를 가져옵니다.
-        CinemachineVirtualCamera activeCamera = cinemachineBrain.ActiveVirtualCamera as CinemachineVirtualCamera;
+        //CinemachineVirtualCamera activeCamera = cinemachineBrain.ActiveVirtualCamera as CinemachineVirtualCamera;
 
-        if (activeCamera != null)
+        foreach (var blendListCamera in cameras)
+        {
+            if (blendListCamera != null)
+            {
+                // 현재 활성화된 IChinemachineCamera를 가져옵니다.
+                ICinemachineCamera liveCamera = blendListCamera.LiveChild;
+
+                if (liveCamera != null)
+                {
+                    // IChinemachineCamera를 CinemachineVirtualCamera로 캐스팅 시도
+                    CinemachineVirtualCamera virtualCamera = liveCamera as CinemachineVirtualCamera;
+
+                    if (virtualCamera != null)
+                    {
+                        Debug.Log("현재 활성화된 가상 카메라: " + virtualCamera.name);
+                    }
+                    else
+                    {
+                        Debug.Log("현재 활성화된 카메라는 CinemachineVirtualCamera가 아닙니다.");
+                    }
+                }
+            }
+        }
+
+        /*if (activeCamera != null)
         {
             // 배열에서 활성화된 카메라의 인덱스를 찾습니다.
             int index = System.Array.IndexOf(cameras, activeCamera);
@@ -42,6 +66,6 @@ public class CharacterPositionTP : MonoBehaviour
         else
         {
             Debug.LogError("현재 활성화된 카메라를 찾을 수 없습니다.");
-        }
+        }*/
     }
 }
