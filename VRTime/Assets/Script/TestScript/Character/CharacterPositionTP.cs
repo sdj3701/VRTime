@@ -22,9 +22,6 @@ public class CharacterPositionTP : MonoBehaviour
     }
     void CheckActiveCamera()
     {
-        // 현재 활성화된 가상 카메라를 가져옵니다.
-        //CinemachineVirtualCamera activeCamera = cinemachineBrain.ActiveVirtualCamera as CinemachineVirtualCamera;
-
         foreach (var blendListCamera in cameras)
         {
             if (blendListCamera != null)
@@ -48,6 +45,8 @@ public class CharacterPositionTP : MonoBehaviour
                 }
             }
         }
+        // 현재 활성화된 가상 카메라를 가져옵니다.
+        //CinemachineVirtualCamera activeCamera = cinemachineBrain.ActiveVirtualCamera as CinemachineVirtualCamera;
 
         /*if (activeCamera != null)
         {
