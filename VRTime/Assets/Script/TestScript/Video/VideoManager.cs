@@ -9,6 +9,9 @@ public class VideoManager : MonoBehaviour
     public IVideoData videoData;
     public IPositionable positionable;
     private bool videoPrepared = false;
+    public GameObject ChildCamera;
+    public GameObject VideoCamera;
+    public GameObject OtherCamera;
 
     private void Awake()
     {
@@ -29,7 +32,7 @@ public class VideoManager : MonoBehaviour
         if (positionable.GetCheckPoint())
         {
             // Fix 
-            GameObject videoObject = videoData.GetVideoData(0);
+            GameObject videoObject = videoData.GetVideoData(positionable.GetWayCount() - 1);
             videoObject.SetActive(true);
 
             VideoPlayer videoPlayer = videoObject.GetComponent<VideoPlayer>();
@@ -49,6 +52,12 @@ public class VideoManager : MonoBehaviour
                 Debug.Log("재생 끝");
                 // false이어야지 길을 찾음
                 positionable.SetCheckPoint(false);
+                ChildCamera.gameObject.SetActive(true);
+                VideoCamera.gameObject.SetActive(false);
+                OtherCamera.gameObject.SetActive(false);
+                Debug.Log(ChildCamera.name + " "+ ChildCamera.activeSelf);
+                Debug.Log(VideoCamera.name + " "+ VideoCamera.activeSelf);
+
                 /*if(!positionable.GetCheckPoint())
                 {
                     GameObject test = GameObject.Find("Main Camera1");
@@ -70,7 +79,7 @@ public class VideoManager : MonoBehaviour
                         }
                     }
                 }*/
-                
+
                 // 비디오 준비 완료 이벤트 해제
                 videoPlayer.prepareCompleted -= VideoPrepared;
 

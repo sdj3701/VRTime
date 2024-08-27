@@ -16,8 +16,8 @@ public class FinderBoxTrigger : MonoBehaviour
     //나중에 인터페이스로 값을 가져와도 됨
     public GameObject ChildCamera;
     public GameObject VideoCamera;
-    public GameObject CameraManager;
-
+    public GameObject otherGameObject;
+    public GameObject OtherCamera;
 
     private void Start()
     {
@@ -25,16 +25,31 @@ public class FinderBoxTrigger : MonoBehaviour
         videoData = new VideoData();
     }
 
+    private void Update()
+    {
+        Debug.Log(ChildCamera.name + " " + ChildCamera.activeSelf);
+        Debug.Log(VideoCamera.name + " " + VideoCamera.activeSelf);
+        if (positionable.GetCheckPoint() == false)
+        {
+            ChildCamera.gameObject.SetActive(true);
+            VideoCamera.gameObject.SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        CameraManager.gameObject.SetActive(true);
-        ChildCamera.gameObject.SetActive(false);
-        VideoCamera.gameObject.SetActive(true);
+        Debug.Log(other.name);
+        OtherCamera.gameObject.SetActive(true);
+        CheckVIdeo checkVIdeo = otherGameObject.GetComponent<CheckVIdeo>();
         AudioListener audioListener = VideoCamera.GetComponent<AudioListener>();
         audioListener.enabled = true;
-        if (other.gameObject.name == "Player" && !positionable.GetCheckPoint())
+
+        
+
+        if (other.gameObject.name == "Left Controller" || other.gameObject.name == "Right Controller" || other.gameObject.name == "Player" && !positionable.GetCheckPoint())
         {
             
+
             //음성 경로로 찾아서 넣어서 재생
             AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
             AudioClip audioClip = Resources.Load<AudioClip>("Sound/rightnow");
@@ -46,6 +61,26 @@ public class FinderBoxTrigger : MonoBehaviour
             //videoData.GetVideoData(0).gameObject.SetActive(true);
             // 길 안내 변할수 있음
             positionable.SetCheckPoint(true);
+            Debug.Log("OnTriggerEnter" + positionable.GetCheckPoint());
+
+            if (ChildCamera.activeSelf == true)
+            {
+                ChildCamera.gameObject.SetActive(false);
+                Debug.Log(ChildCamera.name + " false");
+            }
+            else
+            {
+                Debug.Log(ChildCamera.name + " " + ChildCamera.activeSelf);
+            }
+            if (VideoCamera.activeSelf == false)
+            {
+                VideoCamera.gameObject.SetActive(true);
+                Debug.Log(VideoCamera.name + " true");
+            }
+            else
+            {
+                Debug.Log(VideoCamera.name + " " + VideoCamera.activeSelf);
+            }
             /*if(positionable.GetCheckPoint())
             {
                 // true를 사용하면 비활성화된 오브젝트도 검색함
@@ -69,7 +104,15 @@ public class FinderBoxTrigger : MonoBehaviour
             }*/
 
             positionable.SetWayCount(1);
+            this.gameObject.SetActive(false);
+            checkVIdeo.ScreensSetActive();
             MyEvent.Invoke(positionable.GetWayCount());
+            
+        }
+        else
+        {
+            Debug.Log(other.name);
+            Debug.Log(positionable.GetCheckPoint());
         }
     }
 }

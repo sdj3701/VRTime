@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SDJTest.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    guid: bf48c0136beff4640be800bb342bc27f
+  - enabled: 1
+    path: Assets/Scenes/CameraMoveing.unity
+    guid: cb171e2d86148194b968ad560b6912c9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 00a7c58fad6f6a8498a139e03942cb95,
       type: 2}
