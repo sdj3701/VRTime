@@ -63,8 +63,6 @@ public class VideoManager : MonoBehaviour
                 ChildCamera.gameObject.SetActive(true);
                 VideoCamera.gameObject.SetActive(false);
                 OtherCamera.gameObject.SetActive(false);
-                Debug.Log(ChildCamera.name + " "+ ChildCamera.activeSelf);
-                Debug.Log(VideoCamera.name + " "+ VideoCamera.activeSelf);
 
                 /*if(!positionable.GetCheckPoint())
                 {
@@ -107,7 +105,6 @@ public class VideoManager : MonoBehaviour
     {
         videoPrepared = true;
         vp.Play(); // 준비 완료 후 비디오 재생 시작
-        Debug.Log("video Play Start");
     }
 
     public void VideoLoad()
@@ -123,7 +120,6 @@ public class VideoManager : MonoBehaviour
             if (videoPlayer != null)
             {
                 //영상이 준비 되었는지 이벤트
-                Debug.Log("videoPlayer Not Null");
                 videoPlayer.prepareCompleted += VideoPrepared;
                 videoPlayer.Prepare();
             }
