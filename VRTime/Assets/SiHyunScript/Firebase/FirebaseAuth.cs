@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase;
@@ -79,3 +79,4 @@ public class FirebaseAuthManager : MonoBehaviour
         Debug.Log("User logged out successfully.");
     }
 }
+*/
