@@ -12,6 +12,7 @@ public class VideoManager : MonoBehaviour
     public GameObject ChildCamera;
     public GameObject VideoCamera;
     public GameObject OtherCamera;
+    public GameObject ExamTest;
 
     VideoPlayer videoPlayer;
 
@@ -92,6 +93,11 @@ public class VideoManager : MonoBehaviour
                 videoPrepared = false;
                 // 비디오 게임 오브젝트 비활성화
                 videoPlayer.gameObject.SetActive(false);
+                if(positionable.GetWayCount() - 1 == 2)
+                {
+                    Debug.Log("Exam Test OK!!!!!!!!!!!!!!!!!!!!!!!");
+                    ExamTest.gameObject.SetActive(true);
+                }
             }
 
         }
