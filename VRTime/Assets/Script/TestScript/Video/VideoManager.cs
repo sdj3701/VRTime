@@ -13,6 +13,8 @@ public class VideoManager : MonoBehaviour
     public GameObject VideoCamera;
     public GameObject OtherCamera;
 
+    VideoPlayer videoPlayer;
+
     private void Awake()
     {
         videoData = new VideoData();
@@ -26,20 +28,25 @@ public class VideoManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         //충돌을 했는지 확인
         if (positionable.GetCheckPoint())
         {
             // Fix 
-            GameObject videoObject = videoData.GetVideoData(positionable.GetWayCount() - 1);
+            /*GameObject videoObject = videoData.GetVideoData(positionable.GetWayCount() - 1);
             videoObject.SetActive(true);
-
+            Debug.Log(videoObject.name);
+            // 인코딩 문제일수도 있다 비디오 버그인듯 찾아보자 바로 재생 끝을 해버려서 문제가 있었네
             VideoPlayer videoPlayer = videoObject.GetComponent<VideoPlayer>();
-
-            //영상이 준비 되었는지 이벤트
-            videoPlayer.prepareCompleted += VideoPrepared;
-            videoPlayer.Prepare();
+            if(videoPlayer != null )
+            {
+                //영상이 준비 되었는지 이벤트
+                Debug.Log("videoPlayer Not Null");
+                videoPlayer.prepareCompleted += VideoPrepared;
+                videoPlayer.Prepare();
+            }*/
+            
 
             if (videoPrepared && videoPlayer.isPlaying)
             {
@@ -82,7 +89,7 @@ public class VideoManager : MonoBehaviour
 
                 // 비디오 준비 완료 이벤트 해제
                 videoPlayer.prepareCompleted -= VideoPrepared;
-
+                videoPrepared = false;
                 // 비디오 게임 오브젝트 비활성화
                 videoPlayer.gameObject.SetActive(false);
             }
@@ -94,6 +101,26 @@ public class VideoManager : MonoBehaviour
     {
         videoPrepared = true;
         vp.Play(); // 준비 완료 후 비디오 재생 시작
+        Debug.Log("video Play Start");
     }
 
+    public void VideoLoad()
+    {
+        if (positionable.GetCheckPoint())
+        {
+            // Fix 
+            GameObject videoObject = videoData.GetVideoData(positionable.GetWayCount() - 1);
+            videoObject.SetActive(true);
+            Debug.Log(videoObject.name);
+            // 인코딩 문제일수도 있다 비디오 버그인듯 찾아보자 바로 재생 끝을 해버려서 문제가 있었네
+            videoPlayer = videoObject.GetComponent<VideoPlayer>();
+            if (videoPlayer != null)
+            {
+                //영상이 준비 되었는지 이벤트
+                Debug.Log("videoPlayer Not Null");
+                videoPlayer.prepareCompleted += VideoPrepared;
+                videoPlayer.Prepare();
+            }
+        }
+    }
 }

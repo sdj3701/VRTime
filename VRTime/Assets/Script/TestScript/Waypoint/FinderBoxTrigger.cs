@@ -18,38 +18,38 @@ public class FinderBoxTrigger : MonoBehaviour
     public GameObject VideoCamera;
     public GameObject otherGameObject;
     public GameObject OtherCamera;
+    public GameObject VideoPlayer;
 
     private void Start()
     {
         positionable = new Positionable();
         videoData = new VideoData();
+        VideoPlayer = GameObject.Find("VideoManager");
     }
 
     private void Update()
     {
-        Debug.Log(ChildCamera.name + " " + ChildCamera.activeSelf);
-        Debug.Log(VideoCamera.name + " " + VideoCamera.activeSelf);
-        if (positionable.GetCheckPoint() == false)
+        //Debug.Log(ChildCamera.name + " " + ChildCamera.activeSelf);
+        //Debug.Log(VideoCamera.name + " " + VideoCamera.activeSelf);
+        /*if (positionable.GetCheckPoint() == false)
         {
             ChildCamera.gameObject.SetActive(true);
             VideoCamera.gameObject.SetActive(false);
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name);
         OtherCamera.gameObject.SetActive(true);
+        ChildCamera.gameObject.SetActive(false);
+        VideoCamera.gameObject.SetActive(true);
         CheckVIdeo checkVIdeo = otherGameObject.GetComponent<CheckVIdeo>();
         AudioListener audioListener = VideoCamera.GetComponent<AudioListener>();
         audioListener.enabled = true;
 
-        
-
         if (other.gameObject.name == "Left Controller" || other.gameObject.name == "Right Controller" || other.gameObject.name == "Player" && !positionable.GetCheckPoint())
         {
-            
-
             //음성 경로로 찾아서 넣어서 재생
             AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
             AudioClip audioClip = Resources.Load<AudioClip>("Sound/rightnow");
@@ -70,7 +70,7 @@ public class FinderBoxTrigger : MonoBehaviour
             }
             else
             {
-                Debug.Log(ChildCamera.name + " " + ChildCamera.activeSelf);
+                Debug.Log("OnTriggerEnter" + " " + ChildCamera.name + " " + ChildCamera.activeSelf);
             }
             if (VideoCamera.activeSelf == false)
             {
@@ -79,7 +79,7 @@ public class FinderBoxTrigger : MonoBehaviour
             }
             else
             {
-                Debug.Log(VideoCamera.name + " " + VideoCamera.activeSelf);
+                Debug.Log("OnTriggerEnter" + " " + VideoCamera.name + " " + VideoCamera.activeSelf);
             }
             /*if(positionable.GetCheckPoint())
             {
@@ -107,7 +107,8 @@ public class FinderBoxTrigger : MonoBehaviour
             this.gameObject.SetActive(false);
             checkVIdeo.ScreensSetActive();
             MyEvent.Invoke(positionable.GetWayCount());
-            
+            VideoManager video = VideoPlayer.GetComponent<VideoManager>();
+            video.VideoLoad();
         }
         else
         {

@@ -715,6 +715,7 @@ MonoBehaviour:
   VideoCamera: {fileID: 701752853}
   otherGameObject: {fileID: 739907306}
   OtherCamera: {fileID: 1678480365}
+  VideoPlayer: {fileID: 0}
 --- !u!1 &283913975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,7 +1702,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: cb8ecab4fe1ad2740a1547cfe1949dfa, type: 2}
+  m_Texture: {fileID: 8400000, guid: 68c6498fc3207a04992e1131dc71d8e9, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3744,6 +3745,7 @@ MonoBehaviour:
   VideoCamera: {fileID: 701752853}
   otherGameObject: {fileID: 739907306}
   OtherCamera: {fileID: 1678480365}
+  VideoPlayer: {fileID: 0}
 --- !u!1 &1173052306
 GameObject:
   m_ObjectHideFlags: 0
@@ -5049,6 +5051,7 @@ MonoBehaviour:
   VideoCamera: {fileID: 701752853}
   otherGameObject: {fileID: 739907306}
   OtherCamera: {fileID: 1678480365}
+  VideoPlayer: {fileID: 0}
 --- !u!1 &1919619608
 GameObject:
   m_ObjectHideFlags: 0
@@ -5074,11 +5077,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919619608}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 18f15c04aaaf5c34e83df4c5d796f431, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 7d29cb897db869f468f37c9a65ed4aa2, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1181466753}
-  m_TargetTexture: {fileID: 8400000, guid: a473733ebc88dee44b6fbc554529b44d, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 68c6498fc3207a04992e1131dc71d8e9, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -5214,11 +5217,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999868309}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 0668c3034ce976a499f69a16e48c80a6, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 7d29cb897db869f468f37c9a65ed4aa2, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1181466753}
-  m_TargetTexture: {fileID: 8400000, guid: cb8ecab4fe1ad2740a1547cfe1949dfa, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 68c6498fc3207a04992e1131dc71d8e9, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
