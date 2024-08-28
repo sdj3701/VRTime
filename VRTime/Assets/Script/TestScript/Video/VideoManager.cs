@@ -91,7 +91,7 @@ public class VideoManager : MonoBehaviour
                 videoPrepared = false;
                 // 비디오 게임 오브젝트 비활성화
                 videoPlayer.gameObject.SetActive(false);
-                if(positionable.GetWayCount() - 1 == 2)
+                if(positionable.GetWayCount() - 1 == 0)
                 {
                     Debug.Log("Exam Test OK!!!!!!!!!!!!!!!!!!!!!!!");
                     ExamTest.gameObject.SetActive(true);

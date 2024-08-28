@@ -48,7 +48,7 @@ public class FinderBoxTrigger : MonoBehaviour
         AudioListener audioListener = VideoCamera.GetComponent<AudioListener>();
         audioListener.enabled = true;
 
-        if (other.gameObject.name == "Left Controller" || other.gameObject.name == "Right Controller" || other.gameObject.name == "Player" && !positionable.GetCheckPoint())
+        if (other.gameObject.name == "Left_Controller" || other.gameObject.name == "Right_Controller" || other.gameObject.name == "Player" && !positionable.GetCheckPoint())
         {
             //음성 경로로 찾아서 넣어서 재생
             AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
