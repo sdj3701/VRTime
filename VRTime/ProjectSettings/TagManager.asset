@@ -6,15 +6,20 @@ TagManager:
   tags:
   - Left Controller
   - Right Controller
+  - suit
+  - mask
+  - shoes
+  - glove
+  - haircap
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
-  - 
-  - 
+  - Mirror A
+  - Mirror B
   - 
   - 
   - 
