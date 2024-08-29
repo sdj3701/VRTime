@@ -6,12 +6,17 @@ PluginImporter:
   iconMap: {}
   executionOrder: {}
   defineConstraints: []
+<<<<<<< HEAD
   isPreloaded: 1
+=======
+  isPreloaded: 0
+>>>>>>> Screenshot
   isOverridable: 0
   isExplicitlyReferenced: 0
   validateReferences: 1
   platformData:
   - first:
+<<<<<<< HEAD
       : Any
     second:
       enabled: 0
@@ -32,10 +37,16 @@ PluginImporter:
       Any: 
     second:
       enabled: 0
+=======
+      Any: 
+    second:
+      enabled: 1
+>>>>>>> Screenshot
       settings: {}
   - first:
       Editor: Editor
     second:
+<<<<<<< HEAD
       enabled: 1
       settings:
         CPU: AnyCPU
@@ -65,6 +76,11 @@ PluginImporter:
       enabled: 0
       settings:
         CPU: None
+=======
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+>>>>>>> Screenshot
   userData: 
   assetBundleName: 
   assetBundleVariant: 
