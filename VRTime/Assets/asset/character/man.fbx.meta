@@ -7,11 +7,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 10 - Default
-    second: {fileID: 2100000, guid: 46ba752863b40a146a7480fd93f083b8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Material #11
     second: {fileID: 2100000, guid: 9fa3864063fc8004b932d8e1f4f03960, type: 2}
   - first:
