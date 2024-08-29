@@ -4,33 +4,27 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float rotateSpeed = 100f;
-
-    private CharacterController characterController;
+    public float moveSpeed = 5f;    // 캐릭터 이동 속도 조절 변수
+    public float rotationSpeed = 100f;  // 캐릭터 회전 속도 조절 변수
 
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        // 플레이어 이동 처리
-        float moveDirectionY = Input.GetAxis("Vertical");
-        float moveDirectionX = Input.GetAxis("Horizontal");
+        // WASD 입력을 받아 캐릭터를 이동시킵니다.
+        float horizontalInput = Input.GetAxis("Horizontal"); // A, D 키
+        float verticalInput = Input.GetAxis("Vertical"); // W, S 키
 
-        Vector3 move = transform.forward * moveDirectionY + transform.right * moveDirectionX;
-        characterController.Move(move * moveSpeed * Time.deltaTime);
+        // 캐릭터의 로컬 좌표계를 기준으로 이동합니다.
+        Vector3 moveDirection = new Vector3(horizontalInput, -verticalInput, 0);
+        transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.Self);
 
-        // 마우스 클릭으로 회전 처리
-        if (Input.GetMouseButton(0)) // 좌클릭
-        {
-            transform.Rotate(Vector3.up, -rotateSpeed * Time.deltaTime);
-        }
-        if (Input.GetMouseButton(1)) // 우클릭
-        {
-            transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime);
-        }
+        // 마우스 입력을 받아 캐릭터를 Z축을 기준으로 회전시킵니다.
+        float mouseX = Input.GetAxis("Mouse X");
+        transform.Rotate(Vector3.forward, mouseX * rotationSpeed * Time.deltaTime);
+
+
     }
 }
