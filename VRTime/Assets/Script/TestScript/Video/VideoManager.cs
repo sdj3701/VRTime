@@ -15,6 +15,7 @@ public class VideoManager : MonoBehaviour
     public GameObject ExamTest;
 
     VideoPlayer videoPlayer;
+    GameObject waypoint;
 
     private void Awake()
     {
@@ -27,6 +28,9 @@ public class VideoManager : MonoBehaviour
             videoData.SetVideoData(i, videoObject[i]);
             videoData.GetVideoData(i).gameObject.SetActive(false);
         }
+
+        waypoint = GameObject.Find("WayPointManager");
+       
     }
 
     private void LateUpdate()
@@ -57,6 +61,8 @@ public class VideoManager : MonoBehaviour
             // 비디오가 재생 중이 아닌 경우 처리
             if (videoPrepared && !videoPlayer.isPlaying)
             {
+                Destination destination = waypoint.GetComponent<Destination>();
+                destination.LoadPoint(positionable.GetWayCount());
                 Debug.Log("재생 끝");
                 // false이어야지 길을 찾음
                 positionable.SetCheckPoint(false);
@@ -91,7 +97,7 @@ public class VideoManager : MonoBehaviour
                 videoPrepared = false;
                 // 비디오 게임 오브젝트 비활성화
                 videoPlayer.gameObject.SetActive(false);
-                if(positionable.GetWayCount() - 1 == 0)
+                if(positionable.GetWayCount() - 1 == 2)
                 {
                     Debug.Log("Exam Test OK!!!!!!!!!!!!!!!!!!!!!!!");
                     ExamTest.gameObject.SetActive(true);

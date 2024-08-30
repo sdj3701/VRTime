@@ -27,17 +27,6 @@ public class FinderBoxTrigger : MonoBehaviour
         VideoPlayer = GameObject.Find("VideoManager");
     }
 
-    private void Update()
-    {
-        //Debug.Log(ChildCamera.name + " " + ChildCamera.activeSelf);
-        //Debug.Log(VideoCamera.name + " " + VideoCamera.activeSelf);
-        /*if (positionable.GetCheckPoint() == false)
-        {
-            ChildCamera.gameObject.SetActive(true);
-            VideoCamera.gameObject.SetActive(false);
-        }*/
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name);
