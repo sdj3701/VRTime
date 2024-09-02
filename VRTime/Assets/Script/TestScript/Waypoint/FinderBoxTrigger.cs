@@ -18,13 +18,15 @@ public class FinderBoxTrigger : MonoBehaviour
     public GameObject VideoCamera;
     public GameObject otherGameObject;
     public GameObject OtherCamera;
-    public GameObject VideoPlayer;
+    private GameObject VideoPlayer;
 
     private void Start()
     {
         positionable = new Positionable();
         videoData = new VideoData();
         VideoPlayer = GameObject.Find("VideoManager");
+        ChildCamera = GameObject.Find("Main Camera");
+        //VideoCamera = GameObject.Find("MainCamera1");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,7 +43,17 @@ public class FinderBoxTrigger : MonoBehaviour
         {
             //음성 경로로 찾아서 넣어서 재생
             AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
+            if(audioSource == null)
+            {
+                Debug.Log("Not Find AudioSource");
+                return;
+            }    
             AudioClip audioClip = Resources.Load<AudioClip>("Sound/rightnow");
+            if (audioClip == null)
+            {
+                Debug.Log("Not Find AudioClip");
+                return;
+            }
             audioSource.clip = audioClip;
             audioSource.Play();
 

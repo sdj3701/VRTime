@@ -31,15 +31,25 @@ public class Destination : MonoBehaviour
 
     public void LoadPoint(int Count)
     {
-        for (int i = 0; i < WayPoint.Length; i++)
+        if (WayPoint.Length == Count)
         {
-            if(i == Count)
-                WayPoint[Count].SetActive(true);
-            else
-                WayPoint[i].SetActive(false);
-
+            Debug.Log("End");
+            return;        
         }
-
+        else
+        {
+            for (int i = 0; i < WayPoint.Length; i++)
+            {
+                if (i == Count)
+                {
+                    WayPoint[i].SetActive(true);
+                    Debug.Log(i + " " + WayPoint[i]);
+                }
+                else
+                    WayPoint[i].SetActive(false);
+            }
+        }
+        
     }
 
 }

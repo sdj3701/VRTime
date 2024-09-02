@@ -62,6 +62,7 @@ public class VideoManager : MonoBehaviour
             if (videoPrepared && !videoPlayer.isPlaying)
             {
                 Destination destination = waypoint.GetComponent<Destination>();
+                //길 찾기 오브젝트 활성화
                 destination.LoadPoint(positionable.GetWayCount());
                 Debug.Log("재생 끝");
                 // false이어야지 길을 찾음
@@ -99,8 +100,8 @@ public class VideoManager : MonoBehaviour
                 videoPlayer.gameObject.SetActive(false);
                 if(positionable.GetWayCount() - 1 == 2)
                 {
-                    Debug.Log("Exam Test OK!!!!!!!!!!!!!!!!!!!!!!!");
                     ExamTest.gameObject.SetActive(true);
+                    Debug.Log("Exam Test OK!!!!!!!!!!!!!!!!!!!!!!!");
                 }
             }
 
@@ -120,7 +121,6 @@ public class VideoManager : MonoBehaviour
             // Fix 
             GameObject videoObject = videoData.GetVideoData(positionable.GetWayCount() - 1);
             videoObject.SetActive(true);
-            Debug.Log(videoObject.name);
             // 인코딩 문제일수도 있다 비디오 버그인듯 찾아보자 바로 재생 끝을 해버려서 문제가 있었네
             videoPlayer = videoObject.GetComponent<VideoPlayer>();
             if (videoPlayer != null)

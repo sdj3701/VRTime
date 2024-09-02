@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class CanvasManager : MonoBehaviour, ICanvasManager
 {
     public Canvas canvas;
-    public GameObject leftHandModel;
-    public GameObject rightHandModel;
+    //public GameObject leftHandModel;
+    //public GameObject rightHandModel;
 
     public void SetCanvasToFullScreen(int width, int height)
     {
@@ -23,8 +23,8 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
                 scaler.referenceResolution = new Vector2(width, height);
             }
 
-            leftHandModel.SetActive(false);
-            rightHandModel.SetActive(false);
+            //leftHandModel.SetActive(false);
+            //rightHandModel.SetActive(false);
 
         }
         else
@@ -56,8 +56,8 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
             }
 
             // Activate any necessary models or UI elements specific to World Space mode
-            leftHandModel.SetActive(true);
-            rightHandModel.SetActive(true);
+            //leftHandModel.SetActive(true);
+            //rightHandModel.SetActive(true);
 
         }
         else

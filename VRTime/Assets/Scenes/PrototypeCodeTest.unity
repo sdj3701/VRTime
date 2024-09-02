@@ -1805,6 +1805,7 @@ GameObject:
   - component: {fileID: 253171157}
   - component: {fileID: 253171156}
   - component: {fileID: 253171155}
+  - component: {fileID: 253171160}
   - component: {fileID: 253171154}
   - component: {fileID: 253171153}
   - component: {fileID: 253171152}
@@ -1882,6 +1883,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  controller: {fileID: 1916670854}
 --- !u!114 &253171152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2028,7 +2030,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253171150}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
   m_Name: 
@@ -2068,6 +2070,21 @@ Transform:
   - {fileID: 1261701520}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &253171160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253171150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a748b3553d4c6af418ccd916aa7e4b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1916670854}
+  prefab: {fileID: 1578877879}
+  moveSpeed: 3
 --- !u!1 &258323069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2223,6 @@ MonoBehaviour:
   VideoCamera: {fileID: 701752853}
   otherGameObject: {fileID: 739907306}
   OtherCamera: {fileID: 1678480365}
-  VideoPlayer: {fileID: 139940940}
 --- !u!1 &278764477
 GameObject:
   m_ObjectHideFlags: 0
@@ -9401,7 +9417,6 @@ MonoBehaviour:
   VideoCamera: {fileID: 701752853}
   otherGameObject: {fileID: 739907306}
   OtherCamera: {fileID: 1678480365}
-  VideoPlayer: {fileID: 1173052306}
 --- !u!1 &1123819263
 GameObject:
   m_ObjectHideFlags: 0
@@ -11015,8 +11030,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1123819269}
-  leftHandModel: {fileID: 0}
-  rightHandModel: {fileID: 0}
 --- !u!4 &1375308946
 Transform:
   m_ObjectHideFlags: 0
@@ -11395,22 +11408,11 @@ MonoBehaviour:
   - {fileID: 611203536}
   - {fileID: 10916176}
   m_Instructions:
-  - m_VirtualCamera: {fileID: 0}
-    m_Hold: 0
-    m_Blend:
-      m_Style: 1
-      m_Time: 2
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
   - m_VirtualCamera: {fileID: 611203536}
     m_Hold: 0
     m_Blend:
       m_Style: 1
-      m_Time: 1
+      m_Time: 2
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -13085,6 +13087,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1578877879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 292534819778018562, guid: cd82f637384fed240a181faff915d3df,
+    type: 3}
+  m_PrefabInstance: {fileID: 756765363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1581806041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14551,7 +14559,6 @@ MonoBehaviour:
   VideoCamera: {fileID: 701752853}
   otherGameObject: {fileID: 739907306}
   OtherCamera: {fileID: 1678480365}
-  VideoPlayer: {fileID: 1173052306}
 --- !u!1 &1905831848
 GameObject:
   m_ObjectHideFlags: 0

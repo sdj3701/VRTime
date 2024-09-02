@@ -20,7 +20,7 @@ public class CheckVIdeo : MonoBehaviour
             positionable = new Positionable();
         }
 
-        Debug.Log(positionable.GetWayCount());
+        //Debug.Log(positionable.GetWayCount() - 1 + " " + videoScreens[positionable.GetWayCount() - 1].gameObject.name);
 
         for (int i = 0; i<videoScreens.Length; i++)
         {
