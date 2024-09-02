@@ -18,24 +18,15 @@ public class FinderBoxTrigger : MonoBehaviour
     public GameObject VideoCamera;
     public GameObject otherGameObject;
     public GameObject OtherCamera;
-    public GameObject VideoPlayer;
+    private GameObject VideoPlayer;
 
     private void Start()
     {
         positionable = new Positionable();
         videoData = new VideoData();
         VideoPlayer = GameObject.Find("VideoManager");
-    }
-
-    private void Update()
-    {
-        //Debug.Log(ChildCamera.name + " " + ChildCamera.activeSelf);
-        //Debug.Log(VideoCamera.name + " " + VideoCamera.activeSelf);
-        /*if (positionable.GetCheckPoint() == false)
-        {
-            ChildCamera.gameObject.SetActive(true);
-            VideoCamera.gameObject.SetActive(false);
-        }*/
+        ChildCamera = GameObject.Find("Main Camera");
+        //VideoCamera = GameObject.Find("MainCamera1");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,7 +43,17 @@ public class FinderBoxTrigger : MonoBehaviour
         {
             //음성 경로로 찾아서 넣어서 재생
             AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
+            if(audioSource == null)
+            {
+                Debug.Log("Not Find AudioSource");
+                return;
+            }    
             AudioClip audioClip = Resources.Load<AudioClip>("Sound/rightnow");
+            if (audioClip == null)
+            {
+                Debug.Log("Not Find AudioClip");
+                return;
+            }
             audioSource.clip = audioClip;
             audioSource.Play();
 
@@ -61,7 +62,7 @@ public class FinderBoxTrigger : MonoBehaviour
             //videoData.GetVideoData(0).gameObject.SetActive(true);
             // 길 안내 변할수 있음
             positionable.SetCheckPoint(true);
-            Debug.Log("OnTriggerEnter" + positionable.GetCheckPoint());
+            //Debug.Log("OnTriggerEnter" + positionable.GetCheckPoint());
 
             if (ChildCamera.activeSelf == true)
             {
@@ -112,8 +113,8 @@ public class FinderBoxTrigger : MonoBehaviour
         }
         else
         {
-            Debug.Log(other.name);
-            Debug.Log(positionable.GetCheckPoint());
+            Debug.LogWarning(other.name + "조건에 없는 오브젝트 입니다");
+            Debug.LogWarning(positionable.GetCheckPoint());
         }
     }
 }

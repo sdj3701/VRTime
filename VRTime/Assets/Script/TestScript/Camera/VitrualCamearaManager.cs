@@ -10,8 +10,8 @@ public class VitrualCamearaManager : MonoBehaviour
 
     private void Start()
     {
-        var p = FindObjectOfType<FinderBoxTrigger>();
-        p.MyEvent.AddListener(ChangePriority);
+        //var p = FindObjectOfType<FinderBoxTrigger>();
+        //p.MyEvent.AddListener(ChangePriority);
     }
 
     public void ChangePriority(int newPriority)
