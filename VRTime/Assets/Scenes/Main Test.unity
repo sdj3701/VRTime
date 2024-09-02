@@ -2424,18 +2424,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5554817, y: 0.1655645, z: 1.5402422}
   m_Center: {x: -0.0020302683, y: 0.014442187, z: 0.6857077}
---- !u!114 &1063298705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063298700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e5e1fcc4c74ddf409b0e347a00b489d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1063781152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3052,10 +3040,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1063298704}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f58f225eecb39af4ebec6ccbed908841,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1063298705}
   m_SourcePrefab: {fileID: 100100000, guid: f58f225eecb39af4ebec6ccbed908841, type: 3}
 --- !u!1001 &1262765362
 PrefabInstance:
@@ -4420,6 +4404,7 @@ GameObject:
   - component: {fileID: 1643663251}
   - component: {fileID: 1643663250}
   - component: {fileID: 1643663249}
+  - component: {fileID: 1643663252}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -4457,7 +4442,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4513,6 +4498,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643663247}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1643663252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643663247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5e1fcc4c74ddf409b0e347a00b489d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1644525593
 GameObject:
   m_ObjectHideFlags: 0

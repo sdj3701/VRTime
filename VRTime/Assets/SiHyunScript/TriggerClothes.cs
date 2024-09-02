@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class TriggerClothes : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("suit"))
+        Debug.Log("콜라이더 충돌");
+        Debug.Log(other.name);
+        if(this.CompareTag("suit"))
         {
+            Debug.Log("슈트와 충돌");
             CharacterAvatar characterAvatar = other.GetComponentInParent<CharacterAvatar>();
             characterAvatar.WearingClothes("suit");
         }
-        else if(other.CompareTag("mask"))
+        else if(this.CompareTag("mask"))
         {
             CharacterAvatar characterAvatar = other.GetComponentInParent<CharacterAvatar>();
             characterAvatar.WearingClothes("mask");
         }
-        else if (other.CompareTag("shoes"))
+        else if (this.CompareTag("shoes"))
         {
             CharacterAvatar characterAvatar = other.GetComponentInParent<CharacterAvatar>();
             characterAvatar.WearingClothes("shoes");
         }
-        else if (other.CompareTag("glove"))
+        else if (this.CompareTag("glove"))
         {
             CharacterAvatar characterAvatar = other.GetComponentInParent<CharacterAvatar>();
             characterAvatar.WearingClothes("glove");
         }
-        else if (other.CompareTag("haircap"))
+        else if (this.CompareTag("haircap"))
         {
             CharacterAvatar characterAvatar = other.GetComponentInParent<CharacterAvatar>();
             characterAvatar.WearingClothes("haircap");
