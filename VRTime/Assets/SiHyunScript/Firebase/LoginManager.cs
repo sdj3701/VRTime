@@ -27,20 +27,28 @@ public class LoginManager : MonoBehaviour
     {
         auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
         {
-            if (task.IsCanceled || task.IsFaulted)
+            if (task.IsCanceled)
             {
                 // 로그인 실패
                 Debug.LogError("로그인 실패: " + task.Exception);
                 // 실패 시 경고 메시지 출력
-                ShowLoginFailedMessage();
+                UnityMainThreadDispatcher.Instance().Enqueue(ShowLoginFailedMessage);
                 return;
             }
-
-            // 로그인 성공
-            FirebaseUser user = task.Result.User;
-            Debug.LogFormat("사용자 {0}이(가) 로그인했습니다.", user.Email);
-            // 다음 씬으로 이동하거나 다른 작업을 수행할 수 있음
-            MoveToNextScene();
+            else if (task.IsFaulted)
+            {
+                Debug.LogError("로그인 실패: " + task.Exception);
+                UnityMainThreadDispatcher.Instance().Enqueue(ShowLoginFailedMessage);
+                return;
+            }
+            else
+            {
+                // 로그인 성공
+                FirebaseUser user = task.Result.User;
+                Debug.LogFormat("사용자 {0}이(가) 로그인했습니다.", user.Email);
+                // 메인 스레드에서 씬 이동을 수행
+                UnityMainThreadDispatcher.Instance().Enqueue(MoveToNextScene);
+            }
         });
     }
 
@@ -56,9 +64,9 @@ public class LoginManager : MonoBehaviour
         string password = passwordInputField.text;
         LoginWithEmailPassword(email, password);
     }
+
     void MoveToNextScene()
     {
-        SceneManager.LoadScene("Prototype");
+        SceneManager.LoadScene("roomTest");
     }
-
 }
